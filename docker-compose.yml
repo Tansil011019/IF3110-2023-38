@@ -1,6 +1,29 @@
 version: '3.3'
 services:
-  web:
+  wiftiket-app-web:
+    container_name: wiftiket-app-web
     image: tubes-1:latest
+    volumes:
+      - './:/var/www/html'
     ports:
-      - 8008:80
+      - "8008:80"
+
+  wiftiket-app-db:
+    container_name: wiftiket-app-db
+    image: postgres:latest
+    env_file:
+      - .env
+    restart: always
+    volumes:
+      - /docker-entrypoint-initdb.d/
+    ports:
+      - "5432:5432"
+  
+  wiftiket-app-adminer:
+    container_name: wiftiket-app-adminer
+    image: dpage/pgadmin4:latest
+    env_file:
+      - .env
+    restart: always
+    ports:
+      - "5050:5050"
