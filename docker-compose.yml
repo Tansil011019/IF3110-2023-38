@@ -1,10 +1,10 @@
-version: '3.3'
+version: "3.3"
 services:
   wiftiket-app-web:
     container_name: wiftiket-app-web
     image: tubes-1:latest
     volumes:
-      - './:/var/www/html'
+      - "./:/var/www/html"
     ports:
       - "8008:80"
 
@@ -18,7 +18,7 @@ services:
       - /docker-entrypoint-initdb.d/
     ports:
       - "5432:5432"
-  
+
   wiftiket-app-adminer:
     container_name: wiftiket-app-adminer
     image: dpage/pgadmin4:latest
