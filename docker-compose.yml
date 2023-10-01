@@ -4,7 +4,7 @@ services:
     container_name: wiftiket-app-web
     image: tubes-1:latest
     volumes:
-      - "./:/var/www/html"
+      - "./src/app:/var/www/html"
     ports:
       - "8008:80"
 
