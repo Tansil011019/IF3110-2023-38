@@ -4,10 +4,9 @@ services:
     container_name: wiftiket-app-web
     image: tubes-1:latest
     volumes:
-      - "./src/app:/var/www/html"
-      - "./src/components:/var/www/html/components"
-      - "./src/styles:/var/www/html/styles"
+      - "./app:/var/www/html/app"
       - "./public:/var/www/html/public"
+      # - "./.htaccess:/var/www/html/.htaccess"
     ports:
       - "8008:80"
 
