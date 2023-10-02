@@ -1,0 +1,9 @@
+@import url('BookinInputStyle.css');
+
+body, input {
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background: #001C30;
+}
