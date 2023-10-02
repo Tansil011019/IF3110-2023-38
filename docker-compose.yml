@@ -5,6 +5,9 @@ services:
     image: tubes-1:latest
     volumes:
       - "./src/app:/var/www/html"
+      - "./src/components:/var/www/html/components"
+      - "./src/styles:/var/www/html/styles"
+      - "./public:/var/www/html/public"
     ports:
       - "8008:80"
 
