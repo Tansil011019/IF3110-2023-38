@@ -3,10 +3,10 @@ services:
   wiftiket-app-web:
     container_name: wiftiket-app-web
     image: tubes-1:latest
+    build: .
     volumes:
       - "./app:/var/www/html/app"
       - "./public:/var/www/html/public"
-      # - "./.htaccess:/var/www/html/.htaccess"
     ports:
       - "8008:80"
 
