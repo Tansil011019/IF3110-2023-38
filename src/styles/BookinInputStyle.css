@@ -1,0 +1,33 @@
+.outer-input-class {
+    display: flex;
+}
+
+.password-input-container {
+    position: relative;
+}
+
+.text-input, .email-input, .password-input {
+    font-size: 1em;
+    font-weight: 600;
+    line-height: 1.375em;
+    background: #D9D9D9;
+    border: none;
+    height: 3.75em;
+    padding-left: 16px;
+    color: #646983;
+    border-radius: 10px;
+}
+
+.password-input {
+    padding-right: 40px;
+}
+
+.password-toogle-button {
+    background: none;
+    border: none;
+    position:absolute;
+    right: 5px;
+    top: 51%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
