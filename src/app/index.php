@@ -17,7 +17,7 @@
 
             $props = [
                 'name' => 'testing-only',
-                'type' => 'email',
+                'type' => 'password',
                 'placeHolder' => 'Password'
             ];
 
