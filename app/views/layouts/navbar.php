@@ -1,14 +1,19 @@
 <nav class="navbar">
-    <a href="#" class="logo">
+    <h1 class="logo">
+        <div class="blur-box"></div>
+        Book.in
+    </h1>
+    <!-- <a href="#" class="logo">
         <img class="navbar-logo" src="/public/images/bookin-logo.svg" alt="bookin logo">
-    </a>
+    </a> -->
     <div class="navbar-menu">
         <ul class = "nav__link">
             <li class = "nav-link-home <?= $data['currentRoute'] === "/home" ? "active" : "" ?>"><a href="/home">Home</a></li>
+            <li class = "nav-link-login <?= $data['currentRoute'] === "/login" ? "active" : "" ?>"><a href="/login">login</a></li>
             <li class = "nav-link-schedule <?= $data['currentRoute'] === "/schedule" ? "active" : "" ?>"><a href="/schedule">Schedule</a></li>
             <li class = "nav-link-history <?= $data['currentRoute'] === "/history" ? "active" : "" ?>"><a href="/history">History</a></li>
         </ul>
-        <button class="login-btn" onclick="login()">Login</button>
+        <button class="register-btn" onclick="login()">Register</button>
         <div class="profile-dropdown">
             <button class="dropbtn">
                 <img src="/public/icons/bookin-profile-ic.svg" alt="bookin profile icon">   
@@ -34,5 +39,6 @@
         </div>
     </div>
 </nav>
+<div class="line"></div>
 
 <script src="/public/js/navbar-login.js"></script>

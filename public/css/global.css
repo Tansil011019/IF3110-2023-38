@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&family=Open+Sans&display=swap');
 
+@font-face {
+    font-family: "Inter";
+    src: url("/public/font/Inter.ttf");
+}
+
+@font-face {
+    font-family: "Otomanopee One";
+    src: url("/public/font/OtomanopeeOne.ttf");
+}
+
 body {
     background: #001C30 center / cover no-repeat;
     width: 100%;
@@ -11,7 +21,7 @@ body {
 }
 
 * {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -28,12 +38,37 @@ header {
     align-items: center;
     margin: 0 auto;
     justify-content: space-between;
+    background-color: #001C30;
 }
 
 .navbar .logo {
-    display: flex;
+    /* display: flex;
     gap: 10px;
-    align-items: center;
+    align-items: center; */
+    position: relative;
+    display: inline-block;
+    /* margin-top: 100px; */
+    margin-left: 130px;
+    color: #fff;
+    font-family: "Otomanopee One";
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    z-index: 1;
+}
+
+.navbar .logo .blur-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 170px;
+    height: 20px;
+    background-color: #dafffb;
+    filter: blur(40px);
+    z-index: -1;
+    margin-top: 25px;
+    margin-left: 0px;
 }
 
 .navbar .logo .navbar-logo {
@@ -42,20 +77,20 @@ header {
 
 .navbar .navbar-menu {
     display: flex;
-    gap: 25px;
-    padding-right: 40px;
+    gap: 60px;
+    margin-right: 130px;
     align-items: center;
 }
 
 .navbar .navbar-menu .nav__link {
     display: flex;
     list-style: none;
-    gap: 35px;
+    gap: 60px;
 }
 
 .navbar .navbar-menu .nav__link a {
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 14px;
     font-weight: 500;
     color: #DAFFFB;
     font-family: 'Inter', sans-serif;
@@ -63,13 +98,17 @@ header {
 
 .navbar .navbar-menu .nav__link a:hover {
     text-decoration: underline;
-    text-underline-offset: 10px;
+    text-underline-offset: 5px;
 }
 
-.navbar .navbar-menu .login-btn {
-    font-size: #001C30;
+.navbar .navbar-menu .register-btn {
+    color: #001C30;
     background: #DAFFFB;
-    padding: 17px;
+    /* padding-top: 12;
+    padding-bottom: 12;
+    padding-right: 28;
+    padding-left: 28; */
+    padding: 12px 28px;
     border: none;
     border-radius: 25px;
     font-family: 'Inter', sans-serif;
@@ -77,7 +116,7 @@ header {
     font-size: 16px;
 }
 
-.navbar .navbar-menu .login-btn:hover {
+.navbar .navbar-menu .register-btn:hover {
     color: #DAFFFB;
     box-shadow: 0 0 20px #176B87;
     background-color: #001C30;
@@ -144,7 +183,7 @@ footer {
 
 .nav__link .active {
     text-decoration: underline;
-    text-underline-offset: 10px;
+    text-underline-offset: 5px;
     color: #D9D9D9;
 }
 
@@ -154,3 +193,10 @@ footer {
     gap: 10px;
 }
 
+.line {
+    width: calc(100%-260px);
+    height: 2px;
+    background: #555353;
+    filter: blur(2px);
+    margin: 0 130px;
+}

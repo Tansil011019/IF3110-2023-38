@@ -9,18 +9,21 @@ function handleLoginState() {
 
     const scheduleItem = document.querySelector('.nav-link-schedule');
     const historyItem = document.querySelector('.nav-link-history');
-    const loginButton = document.querySelector('.login-btn');
+    const registerButton = document.querySelector('.register-btn');
+    const loginButton = document.querySelector('.nav-link-login');
     const profileDropdown = document.querySelector('.profile-dropdown');
 
     if (isLoggedIn) {
         scheduleItem.style.display = 'block';
         historyItem.style.display = 'block';
         profileDropdown.style.display = 'block';
+        registerButton.style.display = 'none';
         loginButton.style.display = 'none';
     } else {
         scheduleItem.style.display = 'none';
         profileDropdown.style.display = 'none';
         historyItem.style.display = 'none';
+        registerButton.style.display = 'block';
         loginButton.style.display = 'block';
     }
 }
