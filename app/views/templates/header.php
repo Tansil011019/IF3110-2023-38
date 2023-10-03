@@ -10,6 +10,6 @@
 <body>
     <header>
         <?php 
-           require_once '../app/views/layouts/navbar.php';
+           require_once 'app/views/layouts/navbar.php';
         ?>
     </header>

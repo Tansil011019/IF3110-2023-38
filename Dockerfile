@@ -8,8 +8,10 @@ RUN a2enmod rewrite
 WORKDIR /var/www/html
 
 # Copy the 'public' directory containing your application files
-COPY ./public/index.php ./public/
+COPY ./index.php .
 COPY ./public/.htaccess ./public/
+COPY ./app/.htaccess ./app/
+COPY ./.htaccess .
 
 # Expose port 80
 EXPOSE 80
