@@ -1,1 +1,5 @@
-<h1>Book.in</h1>
+<div class="home-container">
+     <?php 
+          require_once 'app/views/components/home/discoverMovies.php';
+     ?>
+</div>
