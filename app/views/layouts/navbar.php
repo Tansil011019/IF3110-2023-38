@@ -8,7 +8,7 @@
             <li class = "nav-link-schedule <?= $data['currentRoute'] === "/schedule" ? "active" : "" ?>"><a href="/schedule">Schedule</a></li>
             <li class = "nav-link-history <?= $data['currentRoute'] === "/history" ? "active" : "" ?>"><a href="/history">History</a></li>
         </ul>
-        <button class="login-btn" onclick="toogleItems()">Login</button>
+        <button class="login-btn" onclick="login()">Login</button>
         <div class="profile-dropdown">
             <button class="dropbtn">
                 <img src="/public/icons/bookin-profile-ic.svg" alt="bookin profile icon">   
