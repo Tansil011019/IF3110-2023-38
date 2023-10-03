@@ -154,3 +154,34 @@ footer {
     gap: 10px;
 }
 
+.card-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-container .card-description {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 11px;
+}
+
+.card-container .card-description .card-genre {
+    font-size: 10px;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    color: #64CCC5;
+} 
+
+.card-container .card-description .card-movie-title {
+    font-size: 12px;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    color: #DAFFFB;
+} 
+
+.card-container .card-image {
+    width: 180px;
+    height: 240px;
+    border-radius: 10px;
+}
