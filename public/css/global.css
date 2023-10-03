@@ -160,6 +160,12 @@ footer {
     border-radius: 10px;
 }
 
+.card-outer-container  a,
+.card-outer-container  a {
+    text-decoration: none;
+}
+
+
 .card-container .card-description {
     display: flex;
     flex-direction: column;
