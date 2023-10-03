@@ -1,3 +1,3 @@
 <div class="sliding-card-home-container">
-    Here will be sliding card!
+    <img src="" alt="">
 </div>
