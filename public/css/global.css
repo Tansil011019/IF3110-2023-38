@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Open+Sans&display=swap');
+
+body {
+    background: #001C30 center / cover no-repeat;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 70px;
+}
+
+* {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.navbar .logo {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.navbar .logo .navbar-logo {
+    width: 200px;
+}
+
+.navbar .navbar-menu {
+    display: flex;
+    gap: 25px;
+    padding-right: 40px;
+    align-items: center;
+}
+
+.navbar .navbar-menu .nav__link {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+.navbar .navbar-menu .nav__link a {
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #DAFFFB;
+    font-family: 'Inter', sans-serif;
+}
+
+.navbar .navbar-menu .nav__link a:hover {
+    text-decoration: underline;
+    text-underline-offset: 10px;
+}
+
+.navbar .navbar-menu .login-btn {
+    font-size: #001C30;
+    background: #DAFFFB;
+    padding: 17px;
+    border: none;
+    border-radius: 25px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.navbar .navbar-menu .login-btn:hover {
+    color: #DAFFFB;
+    box-shadow: 0 0 20px #176B87;
+    background-color: #001C30;
+}
+
+.navbar .navbar-menu .nav__link .nav-link-schedule,
+.navbar .navbar-menu .nav__link .nav-link-history,
+.navbar .navbar-menu .profile-dropdown {
+    display: none;
+}
+
+footer {
+    background: #000000;
+    height: 10%;
+}
+
+.dropbtn {
+    border-radius: 100%;
+    border: none;
+    background: transparent;
+}
+
+.profile-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.profile__link {
+    display: none;
+    position: absolute;
+    background: #DAFFFB;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    left: -100px;
+    list-style-type: none;
+    border-radius: 5px;
+    top: 50px;
+}
+
+.profile__link a {
+    font-weight: 400;
+    text-decoration: none;
+    padding: 12px 16px;
+    display: block;
+}
+
+.profile__link .profile-link-profile a {
+    color: #001C30;
+}
+
+.profile__link .profile-link-signout .sign-out-menu-content {
+    color: #FF5A5A;
+}
+
+.profile__link a:hover {
+    background: #176B87;
+    color: #D9D9D9;
+}
+
+.profile-dropdown:hover .profile__link {
+    display: block;
+}
+
+.nav__link .active {
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    color: #D9D9D9;
+}
+
+.profile__link .content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
