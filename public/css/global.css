@@ -201,11 +201,12 @@ footer {
 }
 
 .outer-input-class {
-    display: flex;
+    width: 100%;
 }
 
 .password-input-container {
     position: relative;
+    width: 100%;
 }
 
 .text-input, .email-input, .password-input {
@@ -220,10 +221,6 @@ footer {
     border-radius: 10px;
 }
 
-.password-input {
-    padding-right: 40px;
-}
-
 .password-toogle-button {
     background: none;
     border: none;
@@ -232,4 +229,10 @@ footer {
     top: 51%;
     transform: translateY(-50%);
     cursor: pointer;
+}
+
+.outer-input-class .text-input,
+.outer-input-class .email-input,
+.outer-input-class .password-input {
+    width: 100%;
 }
