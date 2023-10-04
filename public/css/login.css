@@ -1,2 +1,68 @@
 @import url('import.css');
 
+.login-page-container {
+    position: relative;
+    margin: 0 auto;
+    width: 80%; 
+    height: 90vh;
+    box-shadow: 0 20px 8px rgba(218, 255, 251, 0.8);
+    border-radius: 40px;
+}
+
+.login-page-background {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url('/public/images/bookin-login-register-bg-img.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-radius: 20px;
+}
+
+.login-form {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-left: 60px;
+}
+
+.login-form .login-form-upper {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 50%;
+    gap: 36px;
+}
+
+.login-form .login-form-bottom {
+    display: flex;
+    justify-content: flex-end;
+    width: 60%;
+}
+
+.login-form .login-form-bottom .log-in-button {
+    border: none;
+    color: #DAFFFB;
+    background: #001C30;
+    padding: 9px 50px;
+    border-radius: 10px;
+}
+
+.login-form .login-title-label {
+    width: 100%;
+    color: #001C30;
+    font-weight: 700;
+    font-size: 40px;
+}
+
+.login-form .login-form-component {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+}
