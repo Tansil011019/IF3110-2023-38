@@ -1,13 +1,13 @@
 <?php
 
-class Login extends Controller {
+class Register extends Controller {
     public function index() {
-        $headerData['title'] = 'Login Page';
-        $headerData['currentRoute'] = '/login';
+        $headerData['title'] = 'Register Page';
+        $headerData['currentRoute'] = '/register';
         $headerData['style'] = '/public/css/login-register.css';
 
         $this->view('templates/header', $headerData);
-        $this->view('auth/login/index');
+        $this->view('auth/register/index');
         $this->view('templates/footer');
     }
 }
