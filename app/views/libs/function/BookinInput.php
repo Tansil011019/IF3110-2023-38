@@ -27,21 +27,8 @@ function BookinInput($props) {
             <div class=\"password-input-container\">
                 <input type=\"$type\" class=\"$combinedInnerClass\" name=\"$name\" placeholder=\"$placeHolder\">
                 <button type=\"button\" onclick=\"togglePasswordVisibility(this)\" class=\"password-toogle-button\">
-                    <img src=\"public/icons/bookin-eye-open-icon.svg\" alt=\"open-eye-icon\">
+                    <img src=\"/public/icons/bookin-eye-open-icon.svg\" alt=\"open-eye-icon\">
                 </button>
-                <script>
-                    function togglePasswordVisibility(toggleElement) {
-                        var passwordInput = toggleElement.previousElementSibling;
-                    
-                        if (passwordInput.type === \"password\") {
-                            passwordInput.type = \"text\";
-                            toggleElement.innerHTML = '<img src=\"public/icons/bookin-eye-closed-icon.svg\" alt=\"closed-eye-icon\">';
-                        } else {
-                            passwordInput.type = \"password\";
-                            toggleElement.innerHTML = '<img src=\"public/icons/bookin-eye-open-icon.svg\" alt=\"open-eye-icon\">';
-                        }
-                    }            
-                </script>
             </div>
         ";
     }
@@ -54,3 +41,4 @@ function BookinInput($props) {
 }
 
 ?>
+
