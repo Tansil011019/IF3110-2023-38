@@ -1,6 +1,7 @@
 @import url('import.css');
 
-.login-page-container {
+.login-page-container,
+.register-page-container {
     position: relative;
     margin: 0 auto;
     width: 80%; 
@@ -9,7 +10,8 @@
     border-radius: 40px;
 }
 
-.login-page-background {
+.login-page-background,
+.register-page-background {
     position: relative;
     width: 100%;
     height: 100%;
@@ -20,7 +22,8 @@
     border-radius: 20px;
 }
 
-.login-form {
+.login-form,
+.register-form {
     position: absolute;
     width: 100%;
     display: flex;
@@ -30,7 +33,8 @@
     padding-left: 60px;
 }
 
-.login-form .login-form-upper {
+.login-form .login-form-upper,
+.register-form .register-form-upper {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
@@ -39,13 +43,15 @@
     gap: 36px;
 }
 
-.login-form .login-form-bottom {
+.login-form .login-form-bottom,
+.register-form .register-form-bottom {
     display: flex;
     justify-content: flex-end;
     width: 60%;
 }
 
-.login-form .login-form-bottom .log-in-button {
+.login-form .login-form-bottom .log-in-button,
+.register-form .register-form-bottom .register-button {
     border: none;
     color: #DAFFFB;
     background: #001C30;
@@ -53,16 +59,23 @@
     border-radius: 10px;
 }
 
-.login-form .login-title-label {
+.login-form .login-title-label,
+.register-form .register-title-label {
     width: 100%;
     color: #001C30;
     font-weight: 700;
     font-size: 40px;
 }
 
-.login-form .login-form-component {
+.login-form .login-form-component,
+.register-form .register-form-component {
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 26px;
+}
+
+.register-form .register-form-component .register-form-name-container {
+    display: flex;
+    gap: 50px;
 }
