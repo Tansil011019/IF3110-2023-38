@@ -1,4 +1,4 @@
-<?php require_once 'app/views/ui/profileCustomer.php';?>
+<?php require_once 'app/views/components/customerList/profileCustomer.php';?>
 
 <div class="main-container">
     <div class="head-container">
