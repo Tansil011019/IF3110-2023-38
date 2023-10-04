@@ -15,7 +15,7 @@
             </button>
             <ul class = "profile__link">
                 <li class = "profile-link-profile">
-                    <a href="#">
+                    <a href="/profile">
                         <div class="profile-menu-content content">
                             <img src="/public/icons/bookin-profile-ic-without-bg.svg" alt="bookin profile icon without background">
                             <span>Profile</span>
