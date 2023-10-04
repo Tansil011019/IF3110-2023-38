@@ -2,6 +2,9 @@
 
 .home-container {
     padding: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 }
 
 .discover-movie-container {
@@ -58,4 +61,145 @@
     @media (min-width: 1024px) {
         grid-template-columns: repeat(6, 1fr);
     }
+}
+
+.sliding-card-home-container {
+    width: 100%;
+    position: relative;
+    border-top: 2px solid #555353;
+    padding-top: 35px;
+}
+
+.sliding-card-home-container .sliding-card-image {
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+.sliding-card-home-container .sliding-card-image img {
+    width: 100%;
+    display: none;
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+    position: relative;
+} 
+
+.sliding-card-home-container .sliding-card-image img[class="active"] {
+    display: block;
+    animation-name: fadeIn;
+    animation-duration: 1.5s;
+}
+
+@keyframes fadeIn {
+    from {opacity: .8;}
+    to {opacity: 1;}
+}
+
+.sliding-card-home-nav {
+    height: inherit;
+    width: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    align-content: flex-end;
+    flex-wrap: wrap;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    gap: 5px;
+}
+
+.sliding-card-home-nav * {
+    z-index: 10;
+    background-color: transparent;
+}
+
+.sliding-card-home-nav .sliding-card-home-nav-dots {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.sliding-card-home-nav .sliding-card-home-nav-dots .dot {
+    width: 5px;
+    height: 5px;
+    margin: 3px;
+    background-color: #D9D9D9;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.sliding-card-home-nav .sliding-card-home-nav-dots .active {
+    background-color: #555353;
+}
+
+.sliding-card-home-nav-desc {
+    display: flex;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    justify-content: space-between;
+    padding: 20px;
+    width: 100%;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.sliding-card-home-nav-desc .sliding-card-home-nav-desc-today-movie-schedule,
+.sliding-card-home-nav-desc .additional-desc-and-tools .sliding-card-home-nav-desc-movie-duration, 
+.sliding-card-home-nav-desc .additional-desc-and-tools .sliding-card-home-nav-desc-movie-age-restriction{
+    display: flex;
+    color: #FFFFFF;
+    align-items: center;
+}
+
+.sliding-card-home-nav-desc .sliding-card-home-nav-desc-today-movie-schedule {
+    gap: 40px;
+}
+
+.sliding-card-home-nav-desc .sliding-card-home-nav-desc-today-movie-schedule .sliding-card-home-nav-desc-today-movie-schedule-times {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.sliding-card-home-nav-desc .sliding-card-home-nav-desc-today-movie-schedule .sliding-card-home-nav-desc-today-movie-schedule-times .sliding-card-home-nav-desc-today-movie-schedule-time{
+    border: 1px solid #D9D9D9;
+    padding: 8px 30px;
+    border-radius: 10px;
+}
+
+.sliding-card-home-nav-desc .additional-desc-and-tools {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+
+.sliding-card-home-nav-desc .additional-desc-and-tools .sliding-card-home-nav-desc-movie-age-restriction {
+    border: 1px solid #D9D9D9;
+    border-radius: 100%;
+    padding: 10px;
+}
+
+.sliding-card-home-nav-desc .additional-desc-and-tools .sliding-card-home-nav-desc-movie-watch-trailer .sliding-card-home-nav-desc-movie-watch-movie-trailer-button,
+.sliding-card-home-nav-desc .additional-desc-and-tools .sliding-card-home-nav-desc-movie-next-sliding-card .sliding-card-home-nav-desc-movie-next-sliding-card-button {
+    border: none;
+    background: #DAFFFB;
+}
+
+.sliding-card-home-nav-desc .additional-desc-and-tools .sliding-card-home-nav-desc-movie-watch-trailer .sliding-card-home-nav-desc-movie-watch-movie-trailer-button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 7px 11px;
+    border-radius: 15px;
+}
+
+.sliding-card-home-nav-desc .additional-desc-and-tools .sliding-card-home-nav-desc-movie-next-sliding-card .sliding-card-home-nav-desc-movie-next-sliding-card-button {
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
 }
