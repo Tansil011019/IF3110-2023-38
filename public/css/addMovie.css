@@ -4,7 +4,6 @@
   display: flex;
   flex-direction: column;
   width: calc(100%-260px);
-  /* height: 675px; */
   flex-shrink: 0;
   border-radius: 15px;
   background: #001422;
@@ -29,7 +28,7 @@
 .input-field-container {
   display: flex;
   gap: 30px;
-  margin-top: 15px;
+  margin-top: 35px;
 }
 
 .left-side {
@@ -41,7 +40,6 @@
 .title-field {
   display: flex;
   flex-direction: column;
-  /* gap: px; */
 }
 
 .addMovie-label {
@@ -57,10 +55,8 @@
 .text-input {
   font-size: 1em;
   font-weight: 600;
-  line-height: 1.375em;
   background: #d9d9d9;
   border: none;
-  /* width: 100px; */
   height: 3em;
   padding-left: 16px;
   color: #646983;
@@ -68,7 +64,7 @@
 }
 
 .outer-input-class {
-    width: 20em;
+  width: 20em;
 }
 
 .right-side {
@@ -83,8 +79,71 @@
   gap: 15px;
 }
 
-/* .select-limit-time {
-    display: flex;
-    flex-direction: row;
-    gap: 15px;
-} */
+#select-trailer-button,
+#select-poster-button,
+#select-thumbnail-button {
+  height: 4em;
+  width: 9em;
+  border-radius: 10px;
+  background: #d9d9d9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: #001c30;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: capitalize;
+}
+
+input[type="date"] {
+  background-color: #d9d9d9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #001c30;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: capitalize;
+  height: 3em;
+  width: 20em;
+  border-radius: 10px;
+  padding: 1em;
+}
+
+.button-addMovie {
+  display: flex;
+  /* position: absolute;
+  right: 0; */
+  margin-right: -30px;
+  margin-top: 30px;
+  justify-content: right;
+  align-items: center;
+}
+
+#add-movie {
+  display: inline-flex;
+  padding: 15px 55px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: #001c30;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  border-radius: 10px;
+  background: #dafffb;
+}
+
+#add-movie:hover {
+    background-color: #1f5a83;
+    color: #dafffb;
+}
