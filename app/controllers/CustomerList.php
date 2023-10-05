@@ -1,12 +1,12 @@
 <?php
 
-class CustomerList extends Controller {
-    public function index() {
-        $headerData['title'] = 'Customer List';
-        $headerData['currentRoute'] = '/customerlist';
-        $headerData['style'] = 'public/css/customerList.css';
+class CustomerList extends Controller
+{
+    public function index()
+    {
+        $data['header'] = $this->model('CustomerListModel')->getHeader();
 
-        $this->view('templates/header', $headerData);
+        $this->view('templates/header', $data);
         $this->view('customerList/index');
         $this->view('templates/footer');
     }

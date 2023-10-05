@@ -7,10 +7,10 @@
     </a>
     <div class="navbar-menu">
         <ul class="nav__link">
-            <li class="nav-link-home <?= $data['currentRoute'] === "/home" ? "active" : "" ?>"><a href="/home">Home</a></li>
-            <li class="nav-link-schedule <?= $data['currentRoute'] === "/schedule" ? "active" : "" ?>"><a href="/schedule">Schedule</a></li>
-            <li class="nav-link-history <?= $data['currentRoute'] === "/history" ? "active" : "" ?>"><a href="/history">History</a></li>
-            <li class="nav-link-login <?= $data['currentRoute'] === "/login" ? "active" : "" ?>"><a href="/login">Login</a></li>
+            <li class="nav-link-home <?= $data['header']['currentRoute'] === "/home" ? "active" : "" ?>"><a href="/home">Home</a></li>
+            <li class="nav-link-schedule <?= $data['header']['currentRoute'] === "/schedule" ? "active" : "" ?>"><a href="/schedule">Schedule</a></li>
+            <li class="nav-link-history <?= $data['header']['currentRoute'] === "/history" ? "active" : "" ?>"><a href="/history">History</a></li>
+            <li class="nav-link-login <?= $data['header']['currentRoute'] === "/login" ? "active" : "" ?>"><a href="/login">Login</a></li>
         </ul>
         <button class="register-btn" onclick="register()">Register</button>
         <div class="profile-dropdown">
