@@ -7,6 +7,8 @@ services:
     volumes:
       - "./app:/var/www/html/app"
       - "./public:/var/www/html/public"
+    env_file:
+      - .env
     ports:
       - "8008:80"
 

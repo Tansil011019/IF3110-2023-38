@@ -1,5 +1,0 @@
-<?php
-
-define('ITEMS_PER_PAGE_DESKTOP', 12);
-define('ITEMS_PER_PAGE_TABLET', 8);
-define('ITEMS_PER_PAGE_PHONE', 4);
