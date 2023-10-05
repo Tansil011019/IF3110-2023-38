@@ -1,8 +1,9 @@
-<!--  -->
 <?php
 
-class Payment extends Controller {
-    public function index() {
+class Payment extends Controller 
+{
+    public function index() 
+    {
         $data['header'] = $this->model('PaymentModel')->getHeader();
 
         $this->view('templates/header', $data);

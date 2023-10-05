@@ -1,8 +1,9 @@
-<!--  -->
 <?php
 
-class Ticket extends Controller {
-    public function index() {
+class Ticket extends Controller 
+{
+    public function index() 
+    {
         $data['header'] = $this->model('TicketModel')->getHeader();
 
         $this->view('templates/header', $data);
