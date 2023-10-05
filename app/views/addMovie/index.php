@@ -71,16 +71,7 @@
                 </div>
                 <input type="date" id="start-date-input">
                 <span id="selected-date"></span>
-                <script>
-                    function startSelectDate() {
-                        var dateInput = document.getElementById('start-date-input');
-                        dateInput.click();
-                        dateInput.addEventListener('change', function() {
-                            var selectedDate = this.value;
-                            document.getElementById('selected-date').textContent = selectedDate;
-                        });
-                    }
-                </script>
+                <script src="public\js\add-movie.js"></script>
             </div>
         </div>
         <div class="right-side">
@@ -122,16 +113,7 @@
                     <input type="file" id="file-trailer-input" style="display: none;">
                     <button id="select-trailer-button" onclick="document.getElementById('file-trailer-input').click()">Select</button>
                     <span id="file-name"></span>
-                    <script>
-                        document.getElementById('file-trailer-input').addEventListener('change', function() {
-                            var fileName = this.files[0].name;
-                            var maxLength = 20; //max strings to display
-                            if (fileName.length > maxLength) {
-                                fileName = fileName.substring(0, maxLength) + '...';
-                            }
-                            document.getElementById('select-trailer-button').textContent = fileName;
-                        });
-                    </script>
+                    <script src="public\js\add-movie.js"></script>
                 </div>
                 <div class="movie-poster-button">
                     <div class="addMovie-label">
@@ -140,16 +122,7 @@
                     <input type="file" id="file-poster-input" style="display: none;">
                     <button id="select-poster-button" onclick="document.getElementById('file-poster-input').click()">Select</button>
                     <span id="file-name"></span>
-                    <script>
-                        document.getElementById('file-poster-input').addEventListener('change', function() {
-                            var fileName = this.files[0].name;
-                            var maxLength = 20; //max strings to display
-                            if (fileName.length > maxLength) {
-                                fileName = fileName.substring(0, maxLength) + '...';
-                            }
-                            document.getElementById('select-poster-button').textContent = fileName;
-                        });
-                    </script>
+                    <script src="public\js\add-movie.js"></script>;
                 </div>
             </div>
             <div class="url-thumbnail">
@@ -159,51 +132,16 @@
                 <input type="file" id="file-thumbnail-input" style="display: none;">
                 <button id="select-thumbnail-button" onclick="document.getElementById('file-thumbnail-input').click()">Select</button>
                 <span id="file-name"></span>
-                <script>
-                    document.getElementById('file-thumbnail-input').addEventListener('change', function() {
-                        var fileName = this.files[0].name;
-                        var maxLength = 20; //max strings to display
-                        if (fileName.length > maxLength) {
-                            fileName = fileName.substring(0, maxLength) + '...';
-                        }
-                        document.getElementById('select-thumbnail-button').textContent = fileName;
-                    });
-                </script>
+                <script src="public\js\add-movie.js"></script>;
             </div>
             <div class="select-limit-time">
-                <!-- <div class="movie-start-time-button">
-                    <div class="addMovie-label">
-                        Select a Start Date
-                    </div>
-                    <input type="date" id="start-date-input">
-                    <span id="selected-date"></span>
-                    <script>
-                        function startSelectDate() {
-                            var dateInput = document.getElementById('start-date-input');
-                            dateInput.click();
-                            dateInput.addEventListener('change', function() {
-                                var selectedDate = this.value;
-                                document.getElementById('selected-date').textContent = selectedDate;
-                            });
-                        }
-                    </script>
-                </div> -->
                 <div class="movie-end-time-button">
                     <div class="addMovie-label">
                         Select a End Date
                     </div>
                     <input type="date" id="end-date-input">
                     <span id="selected-date"></span>
-                    <script>
-                        function endSelectDate() {
-                            var dateInput = document.getElementById('end-date-input');
-                            dateInput.click();
-                            dateInput.addEventListener('change', function() {
-                                var selectedDate = this.value;
-                                document.getElementById('selected-date').textContent = selectedDate;
-                            });
-                        }
-                    </script>
+                    <script src="public\js\add-movie.js"></script>
                 </div>
             </div>
             <div class="button-addMovie">
