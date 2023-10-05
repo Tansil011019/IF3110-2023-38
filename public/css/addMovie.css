@@ -1,0 +1,59 @@
+@import url("import.css");
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  width: calc(100%-260px);
+  /* height: 675px; */
+  flex-shrink: 0;
+  border-radius: 15px;
+  background: #001422;
+  margin-top: 100px;
+  margin-left: 130px;
+  margin-right: 130px;
+  margin-bottom: 100px;
+  justify-content: center;
+  align-items: center;
+  padding: 3%;
+}
+
+.head-container {
+  color: #dafffb;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.input-field-container {
+    display: flex;
+    gap: 30px;
+
+}
+
+.left-side {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+}
+
+.right-side {
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.select-trailer-poster-button {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+/* .select-limit-time {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+} */
+
