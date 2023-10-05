@@ -191,10 +191,11 @@ CREATE TABLE public.film (
     starting_date timestamp with time zone,
     end_date timestamp with time zone,
     trailer_url_youtube text,
-    poster_url text,
+    poster_url text DEFAULT '/public/images/bookin-default-movie-img.svg'::text,
     trailer_url text,
     created_by uuid NOT NULL,
     updated_by uuid,
+    thumbnail_url text DEFAULT '/public/images/bookin-default-carousel-img.svg'::text,
     CONSTRAINT film_age_restriction_check CHECK ((age_restriction >= 0)),
     CONSTRAINT film_duration_check CHECK ((duration >= 0))
 );
@@ -264,8 +265,8 @@ ALTER TABLE public."user" OWNER TO postgres;
 -- Data for Name: film; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.film (created_at, updated_at, deleted_at, film_id, title, genre, description, age_restriction, duration, starting_date, end_date, trailer_url_youtube, poster_url, trailer_url, created_by, updated_by) FROM stdin;
-2023-10-05 02:06:33.614009+00	\N	\N	d42ad796-7301-4336-b7c9-8a8e8bc85872	Fast and Furious	Action	Dom defeat the enemy's family	12	120	2023-10-04 14:30:00+00	2023-11-04 14:30:00+00	\N	\N	\N	d21be2d3-e2d6-4ad4-89a4-15e2fe49d427	\N
+COPY public.film (created_at, updated_at, deleted_at, film_id, title, genre, description, age_restriction, duration, starting_date, end_date, trailer_url_youtube, poster_url, trailer_url, created_by, updated_by, thumbnail_url) FROM stdin;
+2023-10-05 02:06:33.614009+00	2023-10-05 11:13:28.487239+00	\N	d42ad796-7301-4336-b7c9-8a8e8bc85872	Fast and Furious	Action	Dom defeat the enemy's family	12	120	2023-10-04 14:30:00+00	2023-11-04 14:30:00+00	\N	/public/images/bookin-default-movie-img.svg	\N	d21be2d3-e2d6-4ad4-89a4-15e2fe49d427	d21be2d3-e2d6-4ad4-89a4-15e2fe49d427	/public/images/bookin-default-carousel-img.svg
 \.
 
 
@@ -398,14 +399,6 @@ ALTER TABLE ONLY public.film
 
 ALTER TABLE ONLY public.film
     ADD CONSTRAINT film_updated_by_fkey FOREIGN KEY (updated_by) REFERENCES public."user"(user_id);
-
-
---
--- Name: user fk_created_by; Type: FK CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY public."user"
-    ADD CONSTRAINT fk_created_by FOREIGN KEY (created_by) REFERENCES public."user"(user_id);
 
 
 --
