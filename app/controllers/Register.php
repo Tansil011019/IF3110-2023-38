@@ -2,11 +2,9 @@
 
 class Register extends Controller {
     public function index() {
-        $headerData['title'] = 'Register Page';
-        $headerData['currentRoute'] = '/register';
-        $headerData['style'] = '/public/css/login-register.css';
+        $data['header'] = $this->model("RegisterModel")->getHeader();
 
-        $this->view('templates/header', $headerData);
+        $this->view('templates/header', $data);
         $this->view('auth/register/index');
         $this->view('templates/footer');
     }

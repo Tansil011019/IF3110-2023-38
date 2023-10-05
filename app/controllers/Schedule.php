@@ -2,11 +2,9 @@
 
 class Schedule extends Controller {
     public function index() {
-        $headerData['title'] = 'Schedule Page';
-        $headerData['currentRoute'] = '/schedule';
-        $headerData['style'] = '/public/css/schedule.css';
+        $data['header'] = $this->model("ScheduleModel")->getHeader();
 
-        $this->view('templates/header', $headerData);
+        $this->view('templates/header', $data);
         $this->view('schedule/index');
         $this->view('templates/footer');
     }

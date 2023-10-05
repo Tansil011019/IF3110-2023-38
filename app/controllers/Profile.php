@@ -2,11 +2,9 @@
 
 class Profile extends Controller {
     public function index() {
-        $headerData['title'] = 'Profile';
-        $headerData['currentRoute'] = '/profile';
-        $headerData['style'] = '/public/css/profile.css';
+        $data['header'] = $this->model("ProfileModel")->getHeader();
 
-        $this->view('templates/header', $headerData);
+        $this->view('templates/header', $data);
         $this->view('profile/index');
         $this->view('templates/footer');
     }
