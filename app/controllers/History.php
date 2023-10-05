@@ -2,11 +2,9 @@
 
 class History extends Controller {
     public function index() {
-        $headerData['title'] = 'History Page';
-        $headerData['currentRoute'] = '/history';
-        $headerData['style'] = '/public/css/history.css';
+        $data['header'] = $this->model('HistoryModel')->getHeader();
 
-        $this->view('templates/header', $headerData);
+        $this->view('templates/header', $data);
         $this->view('history/index');
         $this->view('templates/footer');
     }

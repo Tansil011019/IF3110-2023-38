@@ -2,11 +2,9 @@
 
 class Login extends Controller {
     public function index() {
-        $headerData['title'] = 'Login Page';
-        $headerData['currentRoute'] = '/login';
-        $headerData['style'] = '/public/css/login-register.css';
+        $data['header'] = $this->model('LoginModel')->getHeader();
 
-        $this->view('templates/header', $headerData);
+        $this->view('templates/header', $data);
         $this->view('auth/login/index');
         $this->view('templates/footer');
     }
