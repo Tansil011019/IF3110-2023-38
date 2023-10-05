@@ -27,28 +27,60 @@
 }
 
 .input-field-container {
-    display: flex;
-    gap: 30px;
-
+  display: flex;
+  gap: 30px;
+  margin-top: 15px;
 }
 
 .left-side {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
 
+.title-field {
+  display: flex;
+  flex-direction: column;
+  /* gap: px; */
+}
+
+.addMovie-label {
+  color: #fff;
+  font-family: Inter;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: capitalize;
+}
+
+.text-input {
+  font-size: 1em;
+  font-weight: 600;
+  line-height: 1.375em;
+  background: #d9d9d9;
+  border: none;
+  /* width: 100px; */
+  height: 3em;
+  padding-left: 16px;
+  color: #646983;
+  border-radius: 10px;
+}
+
+.outer-input-class {
+    width: 20em;
 }
 
 .right-side {
-    gap: 15px;
-    display: flex;
-    flex-direction: column;
+  gap: 15px;
+  display: flex;
+  flex-direction: column;
 }
 
 .select-trailer-poster-button {
-    display: flex;
-    flex-direction: row;
-    gap: 15px;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
 }
 
 /* .select-limit-time {
@@ -56,4 +88,3 @@
     flex-direction: row;
     gap: 15px;
 } */
-
