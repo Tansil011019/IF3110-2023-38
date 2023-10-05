@@ -2,7 +2,7 @@
 
 class Home extends Controller
 {
-    public function index()
+    public function index($queryParameters=[])
     {
         $data['header'] = $this->model("HomeModel")->getHeader();
         $data['movies'] = $this->model("HomeModel")->getAllMovie();
