@@ -43,120 +43,6 @@ CREATE TYPE public.enum_user_role AS ENUM (
 ALTER TYPE public.enum_user_role OWNER TO postgres;
 
 --
--- Name: check_admin_role_film_created_by(uuid); Type: FUNCTION; Schema: public; Owner: postgres
---
-
-CREATE FUNCTION public.check_admin_role_film_created_by(created_by_param uuid) RETURNS boolean
-    LANGUAGE plpgsql
-    AS $$
-BEGIN
-    IF EXISTS (SELECT 1 FROM "user" WHERE user_id = created_by_param AND user_role = 'ADMIN') THEN
-        RETURN TRUE;
-    ELSE
-        RETURN FALSE;
-    END IF;
-END;
-$$;
-
-
-ALTER FUNCTION public.check_admin_role_film_created_by(created_by_param uuid) OWNER TO postgres;
-
---
--- Name: check_admin_role_film_updated_by(uuid); Type: FUNCTION; Schema: public; Owner: postgres
---
-
-CREATE FUNCTION public.check_admin_role_film_updated_by(updated_by_param uuid) RETURNS boolean
-    LANGUAGE plpgsql
-    AS $$
-BEGIN
-    IF updated_by_param IS NULL OR EXISTS (SELECT 1 FROM "user" WHERE user_id = updated_by_param AND user_role = 'ADMIN') THEN
-        RETURN TRUE;
-    ELSE
-        RETURN FALSE;
-    END IF;
-END;
-$$;
-
-
-ALTER FUNCTION public.check_admin_role_film_updated_by(updated_by_param uuid) OWNER TO postgres;
-
---
--- Name: check_admin_role_schedule_created_by(uuid); Type: FUNCTION; Schema: public; Owner: postgres
---
-
-CREATE FUNCTION public.check_admin_role_schedule_created_by(created_by_param uuid) RETURNS boolean
-    LANGUAGE plpgsql
-    AS $$
-BEGIN
-    IF EXISTS (SELECT 1 FROM "user" WHERE user_id = created_by_param AND user_role = 'ADMIN') THEN
-        RETURN TRUE;
-    ELSE
-        RETURN FALSE;
-    END IF;
-END;
-$$;
-
-
-ALTER FUNCTION public.check_admin_role_schedule_created_by(created_by_param uuid) OWNER TO postgres;
-
---
--- Name: check_admin_role_schedule_updated_by(uuid); Type: FUNCTION; Schema: public; Owner: postgres
---
-
-CREATE FUNCTION public.check_admin_role_schedule_updated_by(updated_by_param uuid) RETURNS boolean
-    LANGUAGE plpgsql
-    AS $$
-BEGIN
-    IF updated_by_param IS NULL OR EXISTS (SELECT 1 FROM "user" WHERE user_id = updated_by_param AND user_role = 'ADMIN') THEN
-        RETURN TRUE;
-    ELSE
-        RETURN FALSE;
-    END IF;
-END;
-$$;
-
-
-ALTER FUNCTION public.check_admin_role_schedule_updated_by(updated_by_param uuid) OWNER TO postgres;
-
---
--- Name: check_admin_role_user_created_by(); Type: FUNCTION; Schema: public; Owner: postgres
---
-
-CREATE FUNCTION public.check_admin_role_user_created_by() RETURNS boolean
-    LANGUAGE plpgsql
-    AS $$
-BEGIN
-    IF EXISTS (SELECT 1 FROM "user" WHERE user_id = NEW.created_by AND user_role = 'ADMIN') THEN
-        RETURN TRUE;
-    ELSE
-        RETURN FALSE;
-    END IF;
-END;
-$$;
-
-
-ALTER FUNCTION public.check_admin_role_user_created_by() OWNER TO postgres;
-
---
--- Name: check_admin_role_user_updated_by(); Type: FUNCTION; Schema: public; Owner: postgres
---
-
-CREATE FUNCTION public.check_admin_role_user_updated_by() RETURNS boolean
-    LANGUAGE plpgsql
-    AS $$
-BEGIN
-    IF EXISTS (SELECT 1 FROM "user" WHERE user_id = NEW.updated_by AND user_role = 'ADMIN') THEN
-        RETURN TRUE;
-    ELSE
-        RETURN FALSE;
-    END IF;
-END;
-$$;
-
-
-ALTER FUNCTION public.check_admin_role_user_updated_by() OWNER TO postgres;
-
---
 -- Name: soft_delete_film(); Type: FUNCTION; Schema: public; Owner: postgres
 --
 
@@ -309,8 +195,6 @@ CREATE TABLE public.film (
     trailer_url text,
     created_by uuid NOT NULL,
     updated_by uuid,
-    CONSTRAINT check_admin_role_film_created_by_constraint CHECK (public.check_admin_role_film_created_by(created_by)),
-    CONSTRAINT check_admin_role_film_updated_by_constraint CHECK (public.check_admin_role_film_updated_by(updated_by)),
     CONSTRAINT film_age_restriction_check CHECK ((age_restriction >= 0)),
     CONSTRAINT film_duration_check CHECK ((duration >= 0))
 );
@@ -332,8 +216,6 @@ CREATE TABLE public.schedule (
     number_of_seats integer,
     created_by uuid NOT NULL,
     updated_by uuid,
-    CONSTRAINT check_admin_role_schedule_created_by_constraint CHECK (public.check_admin_role_schedule_created_by(created_by)),
-    CONSTRAINT check_admin_role_schedule_updated_by_constraint CHECK (public.check_admin_role_schedule_updated_by(updated_by)),
     CONSTRAINT schedule_number_of_seats_check CHECK ((number_of_seats >= 0))
 );
 
@@ -370,7 +252,7 @@ CREATE TABLE public."user" (
     user_id uuid DEFAULT public.uuid_generate_v4() NOT NULL,
     name character varying(100),
     password text,
-    created_by uuid NOT NULL,
+    created_by uuid,
     updated_by uuid,
     user_role public.enum_user_role DEFAULT 'CUSTOMER'::public.enum_user_role NOT NULL
 );
@@ -383,7 +265,7 @@ ALTER TABLE public."user" OWNER TO postgres;
 --
 
 COPY public.film (created_at, updated_at, deleted_at, film_id, title, genre, description, age_restriction, duration, starting_date, end_date, trailer_url_youtube, poster_url, trailer_url, created_by, updated_by) FROM stdin;
-2023-10-04 15:56:03.618306+00	\N	\N	47647d47-9c34-4631-b934-51e6a4a3d28f	Fast and Furious	Action	Dom defeat the enemy's family	12	120	2023-10-04 14:30:00+00	2023-11-04 14:30:00+00	\N	\N	\N	bfb22ef3-1da2-4160-b319-abffc62c0bbe	\N
+2023-10-05 02:06:33.614009+00	\N	\N	d42ad796-7301-4336-b7c9-8a8e8bc85872	Fast and Furious	Action	Dom defeat the enemy's family	12	120	2023-10-04 14:30:00+00	2023-11-04 14:30:00+00	\N	\N	\N	d21be2d3-e2d6-4ad4-89a4-15e2fe49d427	\N
 \.
 
 
@@ -392,7 +274,7 @@ COPY public.film (created_at, updated_at, deleted_at, film_id, title, genre, des
 --
 
 COPY public.schedule (created_at, updated_at, deleted_at, schedule_id, film_id, price, number_of_seats, created_by, updated_by) FROM stdin;
-2023-10-04 16:52:27.652607+00	\N	\N	e62b2b25-221b-409b-9733-1c5bde142031	47647d47-9c34-4631-b934-51e6a4a3d28f	100000.00	10	bfb22ef3-1da2-4160-b319-abffc62c0bbe	\N
+2023-10-05 02:07:43.924644+00	\N	\N	9beb9e80-2e42-47e1-ac0a-ba1f00fa0a62	d42ad796-7301-4336-b7c9-8a8e8bc85872	100000.00	10	d21be2d3-e2d6-4ad4-89a4-15e2fe49d427	\N
 \.
 
 
@@ -401,7 +283,7 @@ COPY public.schedule (created_at, updated_at, deleted_at, schedule_id, film_id, 
 --
 
 COPY public.transaction (created_at, updated_at, deleted_at, transaction_id, schedule_id, order_time, total_price, created_by, updated_by) FROM stdin;
-2023-10-04 17:06:26.623952+00	\N	\N	cfce03f9-278f-4e79-9d2e-7817f1dbe7bc	e62b2b25-221b-409b-9733-1c5bde142031	2023-10-04 14:30:00+00	300000.00	e9799416-371d-45ed-a881-1e8b744d4b64	\N
+2023-10-05 02:08:45.309688+00	\N	\N	f381bf7f-a8bb-4754-86f3-5a3ac0ea28e5	9beb9e80-2e42-47e1-ac0a-ba1f00fa0a62	2023-10-04 14:30:00+00	300000.00	d21be2d3-e2d6-4ad4-89a4-15e2fe49d427	\N
 \.
 
 
@@ -410,8 +292,7 @@ COPY public.transaction (created_at, updated_at, deleted_at, transaction_id, sch
 --
 
 COPY public."user" (created_at, updated_at, deleted_at, user_id, name, password, created_by, updated_by, user_role) FROM stdin;
-2023-09-28 05:21:40.401074+00	2023-10-04 12:04:13.086337+00	\N	bfb22ef3-1da2-4160-b319-abffc62c0bbe	test_name	test_pwd	bfb22ef3-1da2-4160-b319-abffc62c0bbe	\N	ADMIN
-2023-09-28 05:22:37.44096+00	\N	2023-10-04 12:04:33.773923+00	e9799416-371d-45ed-a881-1e8b744d4b64	test_name_1	test_pwd	bfb22ef3-1da2-4160-b319-abffc62c0bbe	\N	CUSTOMER
+2023-10-05 02:04:25.310758+00	2023-10-05 02:05:23.554896+00	\N	d21be2d3-e2d6-4ad4-89a4-15e2fe49d427	test_name	test_pwd	d21be2d3-e2d6-4ad4-89a4-15e2fe49d427	\N	ADMIN
 \.
 
 
