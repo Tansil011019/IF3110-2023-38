@@ -1,10 +1,10 @@
 <div class="sliding-card-home-container">
     <div class="sliding-card-image">
-        <img src="/public/images/bookin-default-carousel-img.svg" data-desc="Image1" alt="default carousel image" class="active">
-        <img src="/public/images/bookin-default-carousel-img.svg" data-desc="Image2" alt="default carousel image">
-        <img src="/public/images/bookin-default-carousel-img.svg" data-desc="Image3" alt="default carousel image">
-        <img src="/public/images/bookin-default-carousel-img.svg" data-desc="Image4" alt="default carousel image">
-        <img src="/public/images/bookin-default-carousel-img.svg" data-desc="Image5" alt="default carousel image">
+        <div class="sliding-card-image">
+            <?php foreach ($data['movies'] as $index => $item) { ?>
+                <img src="<?= $item['thumbnail_url'] ?>" data-desc="Image<?= $index + 1 ?>" alt="carousel image <?= $index + 1 ?>" class="<?= $index === 0 ? 'active' : '' ?>">
+            <?php } ?>
+        </div>
     </div>
     <div class="sliding-card-home-nav">
         <div class="sliding-card-home-nav-dots"></div>
@@ -38,7 +38,7 @@
                 <div class="sliding-card-home-nav-desc-movie-watch-trailer">
                     <button class="sliding-card-home-nav-desc-movie-watch-movie-trailer-button">
                         <div class="button-text-description-watch-trailer">
-                            Watch Trailer 
+                            Watch Trailer
                         </div>
                         <img src="/public/icons/bookin-play-video-button-ic.svg" alt="play button icon">
                     </button>
