@@ -119,8 +119,6 @@ input[type="date"] {
 
 .button-addMovie {
   display: flex;
-  /* position: absolute;
-  right: 0; */
   margin-right: -30px;
   margin-top: 30px;
   justify-content: right;
