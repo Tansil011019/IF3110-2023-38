@@ -4,8 +4,8 @@
     </div>
     <div class="input-field-container">
         <div class="left-side">
-            <div class="movie-field">
-                <div class="movie-title-label">
+            <div class="title-field">
+                <div class="addMovie-label">
                     Movies Title
                 </div>
                 <?php
@@ -20,7 +20,7 @@
                 ?>
             </div>
             <div class="genre-field">
-                <div class="movie-genre-label">
+                <div class="addMovie-label">
                     Genre
                 </div>
                 <?php
@@ -35,7 +35,7 @@
                 ?>
             </div>
             <div class="url-field">
-                <div class="movie-url-label">
+                <div class="addMovie-label">
                     URL Trailer
                 </div>
                 <?php
@@ -50,7 +50,7 @@
                 ?>
             </div>
             <div class="desc-fild">
-                <div class="movie-desc-label">
+                <div class="addMovie-label">
                     Description
                 </div>
                 <?php
@@ -67,7 +67,7 @@
         </div>
         <div class="right-side">
             <div class="duration-field">
-                <div class="movie-duration-label">
+                <div class="addMovie-label">
                     Duration
                 </div>
                 <?php
@@ -82,7 +82,7 @@
                 ?>
             </div>
             <div class="agelimit-field">
-                <div class="movie-agelimit-label">
+                <div class="addMovie-label">
                     Age Limit
                 </div>
                 <?php
@@ -98,7 +98,7 @@
             </div>
             <div class="select-trailer-poster-button">
                 <div class="movie-trailer-button">
-                    <div class="movie-trailer-label">
+                    <div class="addMovie-label">
                         Select Movie Trailer
                     </div>
                     <input type="file" id="file-trailer-input" style="display: none;">
@@ -116,7 +116,7 @@
                     </script>
                 </div>
                 <div class="movie-poster-button">
-                    <div class="movie-poster-label">
+                    <div class="addMovie-label">
                         Select Movie Poster
                     </div>
                     <input type="file" id="file-poster-input" style="display: none;">
@@ -135,7 +135,7 @@
                 </div>
             </div>
             <div class="url-thumbnail">
-                <div class="movie-thubnail-label">
+                <div class="addMovie-label">
                     Select Movie Thumbnail
                 </div>
                 <input type="file" id="file-thumbnail-input" style="display: none;">
@@ -154,7 +154,7 @@
             </div>
             <div class="select-limit-time">
                 <div class="movie-start-time-button">
-                    <div class="select-start-time-label">
+                    <div class="addMovie-label">
                         Select a Start Date
                     </div>
                     <input type="date" id="start-date-input">
@@ -171,7 +171,7 @@
                     </script>
                 </div>
                 <div class="movie-end-time-button">
-                    <div class="select-start-time-label">
+                    <div class="addMovie-label">
                         Select a End Date
                     </div>
                     <input type="date" id="end-date-input">
