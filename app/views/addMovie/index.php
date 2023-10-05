@@ -59,10 +59,28 @@
                     'name' => 'movie-desc',
                     'placeHolder' => "Text",
                     'type' => 'text',
+                    // 'innerClassName' => 'movie-desc',
                 ];
                 $inputField = BookinInput($inputProps);
                 echo $inputField;
                 ?>
+            </div>
+            <div class="movie-start-time-button">
+                <div class="addMovie-label">
+                    Select a Start Date
+                </div>
+                <input type="date" id="start-date-input">
+                <span id="selected-date"></span>
+                <script>
+                    function startSelectDate() {
+                        var dateInput = document.getElementById('start-date-input');
+                        dateInput.click();
+                        dateInput.addEventListener('change', function() {
+                            var selectedDate = this.value;
+                            document.getElementById('selected-date').textContent = selectedDate;
+                        });
+                    }
+                </script>
             </div>
         </div>
         <div class="right-side">
@@ -153,7 +171,7 @@
                 </script>
             </div>
             <div class="select-limit-time">
-                <div class="movie-start-time-button">
+                <!-- <div class="movie-start-time-button">
                     <div class="addMovie-label">
                         Select a Start Date
                     </div>
@@ -169,7 +187,7 @@
                             });
                         }
                     </script>
-                </div>
+                </div> -->
                 <div class="movie-end-time-button">
                     <div class="addMovie-label">
                         Select a End Date
