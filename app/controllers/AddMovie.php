@@ -2,11 +2,9 @@
 
 class AddMovie extends Controller {
     public function index() {
-        $headerData['title'] = 'Add Movie';
-        $headerData['currentRoute'] = '/addMovie';
-        $headerData['style'] = 'public/css/addMovie.css';
+        $data['header'] = $this->model('AddMovieModel')->getHeader();
 
-        $this->view('templates/header', $headerData);
+        $this->view('templates/header', $data);
         $this->view('addMovie/index');
         $this->view('templates/footer');
     }
