@@ -59,7 +59,6 @@
                     'name' => 'movie-desc',
                     'placeHolder' => "Text",
                     'type' => 'text',
-                    // 'innerClassName' => 'movie-desc',
                 ];
                 $inputField = BookinInput($inputProps);
                 echo $inputField;
