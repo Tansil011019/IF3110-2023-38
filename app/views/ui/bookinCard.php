@@ -2,14 +2,14 @@
     <a href="#">
         <div class="card-container">
                 <div class="card-image">
-                    <img src="<?= $datum['movieImage']; ?>" alt="card image">
+                    <img src="<?= $datum['poster_url']; ?>" alt="card image">
                 </div>
                 <div class="card-description">
                     <div class="card-genre">
-                        <?= $datum['movieGenre']; ?>
+                        <?= $datum['genre']; ?>
                     </div>
                     <div class="card-movie-title">
-                        <?= $datum['movieTitle']; ?>
+                        <?= $datum['title']; ?>
                     </div>
                 </div>
         </div>

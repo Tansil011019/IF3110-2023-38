@@ -1,6 +1,9 @@
 # Use the php:8.0-apache image as the base image
 FROM php:8.0-apache
 
+# Install the PostgreSQL PDO extension
+RUN apt-get update && apt-get install -y libpq-dev && docker-php-ext-install pdo_pgsql
+
 # Enable Apache mod_rewrite
 RUN a2enmod rewrite
 
