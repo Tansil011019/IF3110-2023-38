@@ -23,7 +23,7 @@ class App {
         }
 
         if (!empty($url)) {
-            $this->param = array_values($url);
+            $this->param = [$url];
         }
 
         call_user_func_array([$this->controller, $this->method], $this->param);
@@ -34,7 +34,11 @@ class App {
             $url = rtrim($_GET['url'], '/');
             $url = filter_var($url, FILTER_SANITIZE_URL);
             $url = explode('/', $url);
-            return $url;
+
+            $query = parse_url($_SERVER['REQUEST_URI'], PHP_URL_QUERY);
+            parse_str($query, $queryParameters);
+
+            return array_merge($url, $queryParameters);
         }
     }
 }
