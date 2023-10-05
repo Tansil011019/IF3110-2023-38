@@ -1,0 +1,132 @@
+/* Colors */
+@import url('import.css');
+
+:root {
+    --kuretake-black-manga: #001422;
+    --midnight-dreams: #001c30;
+    --gainsboro: #d9d9d9;
+    --ice: #dafffb;
+    --white: #ffffff;
+}
+
+.body {
+    color: var(--midnight-dreams);
+    width: 100%;
+    height: 100%;
+    padding-bottom: 40px;
+}
+
+.line-top-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 94%;
+    padding-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 40px;
+}
+
+.line-complete-container {
+    width: 91%;
+    padding: 10px;
+}
+
+.line-top-container img, .line-complete-container img {
+    width: 100%;
+}
+
+.complete-container {
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+    width: 91%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--kuretake-black-manga);
+}
+
+.complete-page-container {
+    padding-top: 10px;
+    display: flex;
+    color: var(--ice);
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    gap: 40px;
+}
+
+.complete-page-current {
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.complete-info-container {
+    width: 90%;
+    padding-top: 45px;
+    text-align: center;
+    color: var(--white);
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.complete-info-title {
+    border: 2px solid var(--ice);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 20px;
+    color: var(--ice);
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 700;
+    align-self: center;
+}
+
+.complete-info-transaction-container {
+    border: 2px solid var(--ice);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.complete-info-order-container {
+    border: 2px solid var(--ice);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.complete-info-total-container {
+    border: 2px solid var(--ice);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.complete-info-status-container {
+    border: 2px solid var(--ice);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-home {
+    padding-top: 80px;
+    padding-bottom: 60px;
+}
+
+.button-home a {
+    cursor: pointer;
+    padding: 15px 65px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--ice);
+    color: var(--midnight-dreams);
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+}
