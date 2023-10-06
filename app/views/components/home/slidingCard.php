@@ -1,7 +1,7 @@
 <div class="sliding-card-home-container">
     <div class="sliding-card-image">
         <div class="sliding-card-image">
-            <?php foreach ($data['movies'] as $index => $item) { ?>
+            <?php foreach ($data['slidingCardMovies'] as $index => $item) { ?>
                 <img src="<?= $item['thumbnail_url'] ?>" data-desc="Image<?= $index + 1 ?>" alt="carousel image <?= $index + 1 ?>" class="<?= $index === 0 ? 'active' : '' ?>">
             <?php } ?>
         </div>

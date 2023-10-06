@@ -38,7 +38,8 @@ class HomeModel
         return $this->db->resultSet();
     }
 
-    public function getAllStatus() {
+    public function getAllStatus()
+    {
         return [
             ['status' => 'Now Showing'],
             ['status' => 'Up Coming'],
@@ -59,7 +60,7 @@ class HomeModel
 
         $conditions = [];
 
-        if(array_key_exists($status, $this->statusFilm)) {
+        if (array_key_exists($status, $this->statusFilm)) {
             $conditions[] = $this->statusFilm[$status];
         }
 
@@ -80,8 +81,20 @@ class HomeModel
         return $this->db->resultSet();
     }
 
+    public function getCountData()
+    {
+        $this->db->query('SELECT COUNT(*) FROM ' . $this->table);
+        return $this->db->single();
+    }
+
     public function getRandomData($number = 5)
     {
+        $totalRows = $this->getCountData()['count'];
+        $limit = min($number, $totalRows);
+
+        $this->db->query('SELECT * FROM ' . $this->table . ' ORDER BY RANDOM() LIMIT ' . $limit);
+
+        return $this->db->resultSet();
     }
 
     public function getAllGenres()
