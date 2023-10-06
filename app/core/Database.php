@@ -28,6 +28,7 @@ class Database
 
     public function query($query)
     {
+        var_dump($query);
         $this->stmt = $this->dbh->prepare($query);
     }
 
@@ -46,9 +47,8 @@ class Database
                     break;
                 default:
                     $type = PDO::PARAM_STR;
-            }
+            }   
         }
-
         $this->stmt->bindValue($param, $value, $type);
     }
 
