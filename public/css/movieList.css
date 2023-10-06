@@ -29,6 +29,22 @@
     color: #DAFFFB;
 }
 
+.admin-movie-sorting-container {
+    display: flex;
+    gap: 20px;
+}
+
+.admin-movie-sorting-container button {
+    cursor: pointer;
+    background-color: #001C30;;
+    border: 1px solid #D9D9D9;
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: #D9D9D9;
+    font-size: 12px;
+    font-weight: 500;
+}
+
 .admin-movie-body {
     display: flex;
     flex-direction: column;
