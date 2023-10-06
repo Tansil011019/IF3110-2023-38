@@ -3,11 +3,9 @@
 
 class Ticket extends Controller {
     public function index() {
-        $headerData['title'] = 'Ticket';
-        $headerData['currentRoute'] = '/ticket';
-        $headerData['style'] = '/public/css/ticket.css';
+        $data['header'] = $this->model('TicketModel')->getHeader();
 
-        $this->view('templates/header', $headerData);
+        $this->view('templates/header', $data);
         $this->view('ticket/index');
         $this->view('templates/footer');
     }
