@@ -255,7 +255,8 @@ CREATE TABLE public."user" (
     password text,
     created_by uuid,
     updated_by uuid,
-    user_role public.enum_user_role DEFAULT 'CUSTOMER'::public.enum_user_role NOT NULL
+    user_role public.enum_user_role DEFAULT 'CUSTOMER'::public.enum_user_role NOT NULL,
+    email text NOT NULL
 );
 
 
@@ -266,7 +267,11 @@ ALTER TABLE public."user" OWNER TO postgres;
 --
 
 COPY public.film (created_at, updated_at, deleted_at, film_id, title, genre, description, age_restriction, duration, starting_date, end_date, trailer_url_youtube, poster_url, trailer_url, created_by, updated_by, thumbnail_url) FROM stdin;
-2023-10-05 02:06:33.614009+00	2023-10-05 11:13:28.487239+00	\N	d42ad796-7301-4336-b7c9-8a8e8bc85872	Fast and Furious	Action	Dom defeat the enemy's family	12	120	2023-10-04 14:30:00+00	2023-11-04 14:30:00+00	\N	/public/images/bookin-default-movie-img.svg	\N	d21be2d3-e2d6-4ad4-89a4-15e2fe49d427	d21be2d3-e2d6-4ad4-89a4-15e2fe49d427	/public/images/bookin-default-carousel-img.svg
+2023-10-06 09:48:09.542171+00	2023-10-06 15:34:38.117243+00	\N	4ccd3b3b-6607-44da-a96e-2f601bc8273f	URI	Action	The Surgical Strike	20	200	2023-10-20 14:30:00+00	2023-11-04 14:30:00+00	https://www.youtube.com/watch?v=VVY3do673Zc	/public/images/bookin-default-movie-img.svg	/public/videos/URI _ Official Trailer _ Vicky Kaushal, Yami Gautam, Paresh Rawal _ Aditya Dhar _ 11th Jan 2019.mp4	d21be2d3-e2d6-4ad4-89a4-15e2fe49d427	d21be2d3-e2d6-4ad4-89a4-15e2fe49d427	/public/images/bookin-uri-thumbnail-img.svg
+2023-10-06 09:48:09.502536+00	2023-10-06 13:51:11.633638+00	\N	444e3653-1fc3-484f-bfe8-ea60eaac5b3a	Black Panther	Action	Wakanda Forever	12	120	2023-10-04 14:30:00+00	2023-11-04 14:30:00+00	https://www.youtube.com/watch?v=_Z3QKkl1WyM	/public/images/bookin-default-movie-img.svg	/public/videos/Marvel Studios’ Black Panther_ Wakanda Forever _ Official Trailer.mp4	d21be2d3-e2d6-4ad4-89a4-15e2fe49d427	d21be2d3-e2d6-4ad4-89a4-15e2fe49d427	/public/images/bookin-black-panther-thumbnail-img.svg
+2023-10-06 09:48:09.528117+00	2023-10-06 13:51:11.652829+00	\N	dda6be22-f403-4188-a40a-927e3db2c31b	Zombie Land	Thriller	Terminate zombie	12	120	2023-10-04 14:30:00+00	2023-11-04 14:30:00+00	https://www.youtube.com/watch?v=ZlW9yhUKlkQ	/public/images/bookin-default-movie-img.svg	/public/videos/ZOMBIELAND_ DOUBLE TAP - Official Trailer (HD).mp4	d21be2d3-e2d6-4ad4-89a4-15e2fe49d427	d21be2d3-e2d6-4ad4-89a4-15e2fe49d427	/public/images/bookin-zombieland-thumbnail-img.svg
+2023-10-06 09:48:09.557651+00	2023-10-06 13:51:11.67261+00	\N	693d3fec-3787-487a-9537-8c66b97d48ba	Spider-Man	Action	Across The Spider Verse	12	120	2023-10-04 14:30:00+00	2023-10-05 14:30:00+00	https://www.youtube.com/watch?v=shW9i6k8cB0	/public/images/bookin-default-movie-img.svg	/public/videos/SPIDER-MAN_ ACROSS THE SPIDER-VERSE - Official Trailer #2 (HD).mp4	d21be2d3-e2d6-4ad4-89a4-15e2fe49d427	d21be2d3-e2d6-4ad4-89a4-15e2fe49d427	/public/images/bookin-spiderman-thumbnail-img.svg
+2023-10-05 02:06:33.614009+00	2023-10-06 15:27:56.551742+00	\N	d42ad796-7301-4336-b7c9-8a8e8bc85872	Fast and Furious	Action	Dom defeat the enemy's family	16	120	2023-10-04 14:30:00+00	2023-11-04 14:30:00+00	https://www.youtube.com/watch?v=32RAq6JzY-w	/public/images/bookin-default-movie-img.svg	/public/videos/FAST X _ Official Trailer.mp4	d21be2d3-e2d6-4ad4-89a4-15e2fe49d427	d21be2d3-e2d6-4ad4-89a4-15e2fe49d427	/public/images/bookin-default-carousel-img.svg
 \.
 
 
@@ -292,8 +297,8 @@ COPY public.transaction (created_at, updated_at, deleted_at, transaction_id, sch
 -- Data for Name: user; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public."user" (created_at, updated_at, deleted_at, user_id, name, password, created_by, updated_by, user_role) FROM stdin;
-2023-10-05 02:04:25.310758+00	2023-10-05 02:05:23.554896+00	\N	d21be2d3-e2d6-4ad4-89a4-15e2fe49d427	test_name	test_pwd	d21be2d3-e2d6-4ad4-89a4-15e2fe49d427	\N	ADMIN
+COPY public."user" (created_at, updated_at, deleted_at, user_id, name, password, created_by, updated_by, user_role, email) FROM stdin;
+2023-10-05 02:04:25.310758+00	2023-10-06 16:42:25.281928+00	\N	d21be2d3-e2d6-4ad4-89a4-15e2fe49d427	test_name	test_pwd	d21be2d3-e2d6-4ad4-89a4-15e2fe49d427	d21be2d3-e2d6-4ad4-89a4-15e2fe49d427	ADMIN	admin@gmail.com
 \.
 
 
