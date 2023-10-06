@@ -1,10 +1,11 @@
 <?php
 
-function BookinDropdown($name, $data, $dropdownBtnClass = '', $placeHolder = "") {
+function BookinDropdown($name, $data, $dropdownBtnClass = '', $placeHolder = "")
+{
     $selectedValue = isset($_GET['param']) ? $_GET['param'] : null;
 
     echo '<select name="' . $name . '" class="dropdown-btn ' . $dropdownBtnClass . '">';
-    if($placeHolder != "") {
+    if ($placeHolder != "") {
         echo '<option value="">' . $placeHolder . '</option>';
     }
 
