@@ -8,6 +8,7 @@ class Home extends Controller
         $data['slidingCardMovies'] = $this->model("HomeModel")->getRandomData();
         $data['movies'] = $this->model("HomeModel")->getMovieByQuery($queryParameters);
         $data['dropdown-genres'] = $this->model("HomeModel")->getAllGenres();
+        $data['dropdown-status'] = $this->model("HomeModel")->getAllStatus();
 
         $this->view('templates/header', $data);
         $this->view('home/index', $data);
