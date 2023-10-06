@@ -99,10 +99,20 @@
   font-size: 14px;
   font-family: "Inter";
   font-weight: normal;
+  width: 200px;
+}
+
+.right-side input {
+  width: 200px;
 }
 
 .right-side button {
   margin-left: 150px;
   width: 24px;
   height: 24px;
+  background-color: #dafffb;
+}
+
+.right-side button:hover {
+  background-color: #9ffff5;
 }
