@@ -79,6 +79,13 @@
   gap: 15px;
 }
 
+.movie-trailer-button,
+.movie-poster-button,
+.url-thumbnail {
+  display: flex;
+  flex-direction: column;
+}
+
 #select-trailer-button,
 #select-poster-button,
 #select-thumbnail-button {
