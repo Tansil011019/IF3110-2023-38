@@ -2,11 +2,11 @@
 
 require_once 'app/models/HomeModel.php';
 
-$genre = isset($_GET['genre']) ? $_GET['genre'] : null;
+$genre = isset($_GET['genre']) ? $_GET['genre'] : '';
 
 $query=[];
 
-if($genre !== null){
+if($genre !== ''){
     $query['genre'] = $genre;
 }
 

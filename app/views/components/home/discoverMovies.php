@@ -33,9 +33,14 @@
                 ?>
             </div>
         </div>
-        <div class="container-bookin-card">
+        <div class="container-bookin-data">
             <?php
             require_once 'app/views/components/home/discoverMoviesData.php'
+            ?>
+        </div>
+        <div class="pagination-container">
+            <?php
+            require_once 'app/views/ui/bookinPagination.php'
             ?>
         </div>
     </div>

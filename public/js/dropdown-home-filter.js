@@ -1,8 +1,9 @@
-var keywordGenre = document.querySelector(".dropdown-btn-genres");
-var containerCard = document.querySelector(".container-bookin-card");
+var keywordGenre = document.querySelector(".genres");
+var containerCard = document.querySelector(".container-bookin-data");
 
 keywordGenre.addEventListener("change", function () {
     console.log(window.location.href)
+    console.log(keywordGenre.value)
   var xhr = new XMLHttpRequest();
 
   xhr.onreadystatechange = function () {

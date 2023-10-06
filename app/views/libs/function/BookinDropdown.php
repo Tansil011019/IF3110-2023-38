@@ -3,7 +3,7 @@
 function BookinDropdown($name, $data, $placeHolder = "", $dropdownBtnClass = '') {
     $selectedValue = isset($_GET['param']) ? $_GET['param'] : null;
 
-    echo '<select name="' . $name . '" class="dropdown-btn-' . $dropdownBtnClass . '">';
+    echo '<select name="' . $name . '" class="dropdown-btn ' . $dropdownBtnClass . '">';
     echo '<option value="">' . $placeHolder . '</option>';
 
     foreach ($data as $datum) {
@@ -14,5 +14,3 @@ function BookinDropdown($name, $data, $placeHolder = "", $dropdownBtnClass = '')
 
     echo '</select>';
 }
-
-?>
