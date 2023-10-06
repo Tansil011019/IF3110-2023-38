@@ -2,7 +2,7 @@
     <div class="sliding-card-image">
         <div class="sliding-card-image">
             <?php foreach ($data['slidingCardMovies'] as $index => $item) { ?>
-                <img src="<?= $item['thumbnail_url'] ?>" data-desc="Image<?= $index + 1 ?>" alt="carousel image <?= $index + 1 ?>" class="<?= $index === 0 ? 'active' : '' ?>">
+                <img src="<?= $item['thumbnail_url'] ?>" data-desc="Image<?= $index + 1 ?>" alt="carousel image <?= $index + 1 ?>" class="<?= $index === 0 ? 'active' : '' ?>" movie-data-age-restriction=<?= json_encode($item['age_restriction']) ?> movie-data-duration=<?= json_encode($item['duration'])?>>
             <?php } ?>
         </div>
     </div>
@@ -13,27 +13,16 @@
                 <div class="sliding-card-home-nav-desc-today-movie-schedule-label">
                     Today:
                 </div>
-                <!-- dummy element -->
                 <div class="sliding-card-home-nav-desc-today-movie-schedule-times">
                     <div class="sliding-card-home-nav-desc-today-movie-schedule-time">
-                        11:45
-                    </div>
-                    <div class="sliding-card-home-nav-desc-today-movie-schedule-time">
                         13:45
-                    </div>
-                    <div class="sliding-card-home-nav-desc-today-movie-schedule-time">
-                        15:45
                     </div>
                 </div>
             </div>
             <div class="additional-desc-and-tools">
-                <!-- dummy element -->
                 <div class="sliding-card-home-nav-desc-movie-duration">
-                    148 min
                 </div>
-                <!-- dummy element -->
                 <div class="sliding-card-home-nav-desc-movie-age-restriction">
-                    12+
                 </div>
                 <div class="sliding-card-home-nav-desc-movie-watch-trailer">
                     <button class="sliding-card-home-nav-desc-movie-watch-movie-trailer-button">

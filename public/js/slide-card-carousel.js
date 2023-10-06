@@ -54,6 +54,18 @@ function updateContent() {
   images.forEach((item) => item.classList.remove("active"));
   images[index].classList.add("active");
 
+  const age_restriction = document.querySelector(
+    ".sliding-card-home-nav-desc-movie-age-restriction"
+  );
+  age_restriction.textContent =
+    images[index].getAttribute("movie-data-age-restriction") + "+";
+
+  const duration = document.querySelector(
+    ".sliding-card-home-nav-desc-movie-duration"
+  );
+  duration.textContent =
+    images[index].getAttribute("movie-data-duration") + " min";
+
   const dots = document.querySelectorAll(".dot");
   dots.forEach((item) => item.classList.remove("active"));
   dots[index].classList.add("active");

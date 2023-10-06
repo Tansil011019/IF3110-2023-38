@@ -92,7 +92,7 @@ class HomeModel
         $totalRows = $this->getCountData()['count'];
         $limit = min($number, $totalRows);
 
-        $this->db->query('SELECT * FROM ' . $this->table . ' ORDER BY RANDOM() LIMIT ' . $limit);
+        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE end_date > current_timestamp ORDER BY RANDOM() LIMIT ' . $limit);
 
         return $this->db->resultSet();
     }
