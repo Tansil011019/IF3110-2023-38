@@ -7,14 +7,14 @@
     gap: 40px;
 }
 
-.discover-history-container {
+.transaction-history-container {
     padding: 0 60px;
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.discover-history-header {
+.transaction-history-header {
     display: flex;
     justify-content: space-between;
     border-bottom: 2px solid #555353;
@@ -22,14 +22,14 @@
     padding: 20px 0;
 }
 
-.discover-history-header .discover-history-title {
+.transaction-history-header .transaction-history-title {
     font-family: 'Inter', sans-serif;
     font-weight: 800;
     font-size: 24px;
     color: #DAFFFB;
 }
 
-.discover-history-body {
+.transaction-history-body {
     display: flex;
     flex-direction: column;
     gap: 30px;
