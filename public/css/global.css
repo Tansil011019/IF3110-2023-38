@@ -269,3 +269,13 @@ footer {
   margin-top: 25px;
   margin-left: 0px;
 }
+
+.discover-movie-filter-dropdown {
+  display: flex;
+  gap: 10px;
+}
+
+.discover-movie-filter-dropdown .dropdown-btn .genres {
+  padding: 30px; 
+  border-radius: 20%;
+}

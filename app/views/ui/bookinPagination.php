@@ -1,3 +1,5 @@
 <div class="discover-movies-list-pagination">
-    There will be pagination here!
+    <div class="bookin-pagination">
+        Pagination Here
+    </div>
 </div>
