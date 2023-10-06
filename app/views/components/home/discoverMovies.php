@@ -24,13 +24,26 @@
                 Sort By:
             </div>
             <div class="discover-movie-filter-dropdown">
-                <?php
-                require_once 'app/views/libs/function/BookinDropdown.php';
+                <div class="discover-movie-status-filter">
+                    <?php
+                    require_once 'app/views/libs/function/BookinDropdown.php';
 
-                $selectField = BookinDropdown('genre', $data['dropdown-genres'], 'All Genres', 'genres');
-
-                echo $selectField;
-                ?>
+                    $selectField = BookinDropdown('status', $data['dropdown-status'], 'status-film');
+    
+                    echo $selectField;
+                    ?>
+                    <img src="/public/icons/bookin-arrow-down-dropdown-ic.svg" alt="bookin array down dropdown icon">
+                </div>
+                <div class="discover-movie-genre-filter">
+                    <?php
+                    require_once 'app/views/libs/function/BookinDropdown.php';
+    
+                    $selectField = BookinDropdown('genre', $data['dropdown-genres'], 'genres-film', 'All Genres');
+    
+                    echo $selectField;
+                    ?>
+                    <img src="/public/icons/bookin-arrow-down-dropdown-ic.svg" alt="bookin array down dropdown icon">
+                </div>
             </div>
         </div>
         <div class="container-bookin-data">

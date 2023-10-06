@@ -1,10 +1,12 @@
 <?php
 
-function BookinDropdown($name, $data, $placeHolder = "", $dropdownBtnClass = '') {
+function BookinDropdown($name, $data, $dropdownBtnClass = '', $placeHolder = "") {
     $selectedValue = isset($_GET['param']) ? $_GET['param'] : null;
 
     echo '<select name="' . $name . '" class="dropdown-btn ' . $dropdownBtnClass . '">';
-    echo '<option value="">' . $placeHolder . '</option>';
+    if($placeHolder != "") {
+        echo '<option value="">' . $placeHolder . '</option>';
+    }
 
     foreach ($data as $datum) {
         $datumName = $datum[$name];

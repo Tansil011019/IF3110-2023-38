@@ -14,6 +14,12 @@ class HomeModel
     private $defaultQuery = [
         "page" => 1,
         "pageSize" => 12,
+        "status" => 'Now Showing',
+    ];
+
+    private $statusFilm = [
+        "Now Showing" => 'starting_date <= current_timestamp AND end_date >= current_timestamp',
+        "Up Coming" => 'starting_date > current_timestamp',
     ];
 
     public function __construct()
@@ -32,6 +38,13 @@ class HomeModel
         return $this->db->resultSet();
     }
 
+    public function getAllStatus() {
+        return [
+            ['status' => 'Now Showing'],
+            ['status' => 'Up Coming'],
+        ];
+    }
+
     public function getMovieByQuery($query)
     {
         if (empty($query)) {
@@ -40,10 +53,15 @@ class HomeModel
 
         $page = isset($query['page']) ? max(1, intval($query['page'])) : $this->defaultQuery['page'];
         $pageSize = isset($query['pageSize']) ? intval($query['pageSize']) : $this->defaultQuery['pageSize'];
+        $status = isset($query['status']) ? $query['status'] : $this->defaultQuery['status'];
 
         $offset = ($page - 1) * $pageSize;
 
         $conditions = [];
+
+        if(array_key_exists($status, $this->statusFilm)) {
+            $conditions[] = $this->statusFilm[$status];
+        }
 
         if (isset($query['genre'])) {
             $conditions[] = 'genre = :genre';
