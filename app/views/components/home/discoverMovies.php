@@ -4,17 +4,17 @@
             Discover Movies
         </div>
         <div class="discover-movie-search-bar">
-            <?php 
-                require_once 'app/views/libs/function/BookinInput.php';
+            <?php
+            require_once 'app/views/libs/function/BookinInput.php';
 
-                $inputProps = [
-                    'name' => 'discover-movies-search-bar',
-                    'placeHolder' => "Search Movie",
-                ];
+            $inputProps = [
+                'name' => 'discover-movies-search-bar',
+                'placeHolder' => "Search Movie",
+            ];
 
-                $inputField = BookinInput($inputProps);
-                
-                echo $inputField;
+            $inputField = BookinInput($inputProps);
+
+            echo $inputField;
             ?>
         </div>
     </div>
@@ -24,11 +24,19 @@
                 Sort By:
             </div>
             <div class="discover-movie-filter-dropdown">
-                Here Will Be The Dropdown!
+                <?php
+                require_once 'app/views/libs/function/BookinDropdown.php';
+
+                $selectField = BookinDropdown('genre', $data['dropdown-genres'], 'All Genres', 'genres');
+
+                echo $selectField;
+                ?>
             </div>
         </div>
-        <?php
+        <div class="container-bookin-card">
+            <?php
             require_once 'app/views/components/home/discoverMoviesData.php'
-        ?>
+            ?>
+        </div>
     </div>
 </div>
