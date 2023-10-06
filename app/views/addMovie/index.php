@@ -69,7 +69,7 @@
                     Select a Start Date
                 </div>
                 <input type="date" id="start-date-input">
-                <span id="selected-date"></span>
+                <span id="selected-start-date"></span>
                 <script src="public\js\add-movie.js"></script>
             </div>
         </div>
@@ -136,15 +136,16 @@
             <div class="select-limit-time">
                 <div class="movie-end-time-button">
                     <div class="addMovie-label">
-                        Select a End Date
+                        Select an End Date
                     </div>
                     <input type="date" id="end-date-input">
-                    <span id="selected-date"></span>
+                    <span id="selected-end-date"></span>
                     <script src="public\js\add-movie.js"></script>
                 </div>
             </div>
             <div class="button-addMovie">
                 <button id="add-movie">Add</button>
+                <script src="public\js\add-movie.js"></script>
             </div>
         </div>
     </div>
