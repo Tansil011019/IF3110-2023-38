@@ -1,4 +1,4 @@
-<div class="body">
+<div class="body-ticket-page">
     <div class="line-top-container">
         <img src="/public/icons/bookin-line-transparent.svg" alt="Transparent Line" />
     </div>
@@ -13,7 +13,7 @@
         </div>
         <div class="ticket-info-container">
             <div class="ticket-info-left-container">
-                <div class="ticket-info-left-poster"><img src="/public/images/poster.svg" alt="Movie Poster" /></div>
+                <div class="ticket-info-left-poster"><img src="/public/images/bookin-poster.svg" alt="Movie Poster" /></div>
                 <div class="ticket-info-left-button">
                     <a href="https://www.youtube.com/watch?v=YoHD9XEInc0" target="_blank">
                         <img src="/public/icons/bookin-button-play.svg" alt="Play Button" />

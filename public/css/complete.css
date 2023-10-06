@@ -1,15 +1,12 @@
 /* Colors */
 @import url('import.css');
 
-:root {
+.body-complete-page {
     --kuretake-black-manga: #001422;
     --midnight-dreams: #001c30;
     --gainsboro: #d9d9d9;
     --ice: #dafffb;
     --white: #ffffff;
-}
-
-.body {
     color: var(--midnight-dreams);
     width: 100%;
     height: 100%;
