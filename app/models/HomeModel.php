@@ -17,10 +17,10 @@ class HomeModel
     ];
 
     public function __construct()
-    {   
+    {
         $this->db = new Database;
     }
-    
+
     public function getHeader()
     {
         return $this->modelInfo;
@@ -32,20 +32,21 @@ class HomeModel
         return $this->db->resultSet();
     }
 
-    public function getMovieByQuery($query) {
-        if(empty($query)) {
+    public function getMovieByQuery($query)
+    {
+        if (empty($query)) {
             $query = $this->defaultQuery;
         }
 
         $page = isset($query['page']) ? max(1, intval($query['page'])) : $this->defaultQuery['page'];
         $pageSize = isset($query['pageSize']) ? intval($query['pageSize']) : $this->defaultQuery['pageSize'];
 
-        $offset = ($page-1)*$pageSize;
+        $offset = ($page - 1) * $pageSize;
 
-        $condition = [];
-        
-        if(isset($query['genre'])) {
-            $condition[] = 'genre = :genre';
+        $conditions = [];
+
+        if (isset($query['genre'])) {
+            $conditions[] = 'genre = :genre';
         }
 
         $whereClause = empty($conditions) ? '' : 'WHERE ' . implode(' AND ', $conditions);
@@ -56,12 +57,18 @@ class HomeModel
 
         if (isset($query['genre'])) {
             $this->db->bind(':genre', ucfirst($query['genre']), PDO::PARAM_STR);
-        }   
+        }
 
         return $this->db->resultSet();
     }
 
-    public function getRandomData($number=5) {
+    public function getRandomData($number = 5)
+    {
+    }
 
+    public function getAllGenres()
+    {
+        $this->db->query('SELECT DISTINCT genre FROM ' . $this->table);
+        return $this->db->resultSet();
     }
 }

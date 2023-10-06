@@ -28,8 +28,8 @@ class Database
 
     public function query($query)
     {
-        var_dump($query);
         $this->stmt = $this->dbh->prepare($query);
+        // var_dump($this->stmt);
     }
 
     public function bind($param, $value, $type = null)
@@ -49,6 +49,8 @@ class Database
                     $type = PDO::PARAM_STR;
             }   
         }
+        // var_dump($param);
+        // var_dump($value);
         $this->stmt->bindValue($param, $value, $type);
     }
 
