@@ -7,9 +7,14 @@ const nextButton = document.querySelector(
   ".sliding-card-home-nav-desc-movie-next-sliding-card-button"
 );
 
+const videoContainer = document.querySelector(".video-player-container");
+const slideCardContainer = document.querySelector(".sliding-card-home-container")
+const videoPlayer = document.querySelector(".video-player-container .video-player");
+
 let speed = 3000;
 let index = 0;
 let intervalId;
+let isPlayingVideo = false
 
 images.forEach((image, i) => {
   const span = document.createElement("span");
@@ -23,7 +28,27 @@ images.forEach((image, i) => {
     updateContent();
   });
   dots.appendChild(span);
+
+  const watchMovieButton = document.querySelector(".sliding-card-home-nav-desc-movie-watch-movie-trailer-button")
+
+  watchMovieButton.addEventListener("click", () => {
+    if(!isPlayingVideo){
+      clearInterval(intervalId);
+      videoPlayer.src = JSON.parse(`"${images[index].getAttribute("movie-data-trailer-url")}"`);
+      videoContainer.style.display = "block";
+      slideCardContainer.style.display = "none";
+      videoPlayer.play();
+      isPlayingVideo = true;
+    }
+  })
 });
+
+videoPlayer.addEventListener("ended", ()=>{
+  videoContainer.style.display="none";
+  slideCardContainer.style.display = "block";
+  isPlayingVideo = false;
+  startInterval();
+})
 
 nextButton.addEventListener("click", () => {
   index++;

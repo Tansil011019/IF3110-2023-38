@@ -63,6 +63,7 @@
   }
 }
 
+.video-player-container,
 .sliding-card-home-container {
   width: 100%;
   position: relative;
@@ -70,10 +71,15 @@
   padding-top: 35px;
 }
 
+.video-player-container .video-player,
 .sliding-card-home-container .sliding-card-image {
   width: 100%;
   height: 33rem;
   position: relative;
+}
+
+.video-player-container {
+    display: none;
 }
 
 .sliding-card-home-container .sliding-card-image img {

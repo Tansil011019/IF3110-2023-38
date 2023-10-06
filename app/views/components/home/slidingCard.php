@@ -1,8 +1,12 @@
+<?php
+    require_once 'app/views/components/home/videoPlayer.php'
+?>
+
 <div class="sliding-card-home-container">
     <div class="sliding-card-image">
         <div class="sliding-card-image">
             <?php foreach ($data['slidingCardMovies'] as $index => $item) { ?>
-                <img src="<?= $item['thumbnail_url'] ?>" data-desc="Image<?= $index + 1 ?>" alt="carousel image <?= $index + 1 ?>" class="<?= $index === 0 ? 'active' : '' ?>" movie-data-age-restriction=<?= json_encode($item['age_restriction']) ?> movie-data-duration=<?= json_encode($item['duration'])?>>
+                <img src="<?= $item['thumbnail_url'] ?>" data-desc="Image<?= $index + 1 ?>" alt="carousel image <?= $index + 1 ?>" class="<?= $index === 0 ? 'active' : '' ?>" movie-data-age-restriction=<?= json_encode($item['age_restriction']) ?> movie-data-duration=<?= json_encode($item['duration'])?> movie-data-trailer-url=<?= json_encode($item['trailer_url'])?>>
             <?php } ?>
         </div>
     </div>
