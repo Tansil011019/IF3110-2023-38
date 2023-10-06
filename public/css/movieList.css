@@ -1,0 +1,55 @@
+@import url('import.css');
+
+.movie-list-container {
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.admin-movie-container {
+    padding: 0 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.admin-movie-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #555353;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.admin-movie-header .admin-movie-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 24px;
+    color: #DAFFFB;
+}
+
+.admin-movie-body {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.container-grid-card-movies {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 30px;
+    color: #DAFFFB;
+
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    @media (min-width: 1024px) {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+.discover-movies-list-pagination {
+    color: #DAFFFB
+}
