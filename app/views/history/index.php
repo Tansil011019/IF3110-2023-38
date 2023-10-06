@@ -1,1 +1,5 @@
-<h1>This is history page</h1>
+<div class="history-container">
+     <?php
+     require_once 'app/views/components/history/transactionHistory.php';
+     ?>
+</div>
