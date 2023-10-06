@@ -25,7 +25,6 @@ class App {
         if (!empty($url)) {
             $this->param = [$url];
         }
-
         call_user_func_array([$this->controller, $this->method], $this->param);
     }
 
