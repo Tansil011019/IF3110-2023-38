@@ -184,6 +184,20 @@
   border-radius: 10px;
 }
 
+.sliding-card-home-nav-desc
+  .sliding-card-home-nav-desc-today-movie-schedule
+  .sliding-card-home-nav-desc-today-movie-schedule-label,
+.sliding-card-home-nav-desc
+  .sliding-card-home-nav-desc-today-movie-schedule
+  .sliding-card-home-nav-desc-today-movie-schedule-times
+  .sliding-card-home-nav-desc-today-movie-schedule-time,
+.sliding-card-home-nav-desc
+  .additional-desc-and-tools
+  .sliding-card-home-nav-desc-movie-duration {
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+}
+
 .sliding-card-home-nav-desc .additional-desc-and-tools {
   display: flex;
   gap: 30px;
@@ -196,6 +210,8 @@
   border: 1px solid #d9d9d9;
   border-radius: 100%;
   padding: 10px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
 }
 
 .sliding-card-home-nav-desc
@@ -223,6 +239,17 @@
 
 .sliding-card-home-nav-desc
   .additional-desc-and-tools
+  .sliding-card-home-nav-desc-movie-watch-trailer
+  .sliding-card-home-nav-desc-movie-watch-movie-trailer-button
+  .button-text-description-watch-trailer {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 0.75rem;
+  color: #001c30;
+}
+
+.sliding-card-home-nav-desc
+  .additional-desc-and-tools
   .sliding-card-home-nav-desc-movie-next-sliding-card
   .sliding-card-home-nav-desc-movie-next-sliding-card-button {
   border-radius: 100%;
@@ -237,7 +264,7 @@
 
 .discover-movie-filter-dropdown .discover-movie-status-filter,
 .discover-movie-filter-dropdown .discover-movie-genre-filter {
-    position: relative;
+  position: relative;
 }
 
 .discover-movie-filter-dropdown .dropdown-btn {
