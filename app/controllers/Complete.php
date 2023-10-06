@@ -1,13 +1,14 @@
 <!--  -->
 <?php
 
-class Complete extends Controller {
-    public function index() {
-        $headerData['title'] = 'Complete';
-        $headerData['currentRoute'] = '/complete';
-        $headerData['style'] = '/public/css/complete.css';
+class Complete extends Controller 
+{
+    public function index()
+    {
+        $data['header'] = $this->model('CustomerListModel')->getHeader();
+        $data['header'] = $this->model('CompleteModel')->getHeader();
 
-        $this->view('templates/header', $headerData);
+        $this->view('templates/header', $data);
         $this->view('complete/index');
         $this->view('templates/footer');
     }

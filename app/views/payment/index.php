@@ -1,4 +1,4 @@
-<div class="body">
+<div class="body-payment-page">
     <div class="line-top-container">
         <img src="/public/icons/bookin-line-transparent.svg" alt="Transparent Line" />
     </div>
