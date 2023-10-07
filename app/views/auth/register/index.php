@@ -1,6 +1,6 @@
 <div class="register-page-container">
     <div class="register-page-background">
-        <div class="register-form">
+        <form action="/register/registerAjax" method="post" class="register-form">
             <div class="register-form-upper">
                 <div class="register-title-label">
                     Create a new account.
@@ -13,6 +13,7 @@
                         $inputProps = [
                             'name' => 'register-form-first-name',
                             'placeHolder' => "First Name",
+                            'required' => true,
                         ];
                         $inputField = BookinInput($inputProps);
 
@@ -24,6 +25,7 @@
                         $inputProps = [
                             'name' => 'register-form-last-name',
                             'placeHolder' => "Last Name",
+                            'required' => true,
                         ];
                         $inputField = BookinInput($inputProps);
 
@@ -38,6 +40,7 @@
                             'name' => 'register-form-email-address',
                             'placeHolder' => "Email Address",
                             'type' => "email",
+                            'required' => true,
                         ];
                         $inputField = BookinInput($inputProps);
 
@@ -52,6 +55,7 @@
                             'name' => 'register-form-password',
                             'placeHolder' => "Password",
                             'type' => 'password',
+                            'required' => true,
                         ];
 
                         $inputField = BookinInput($inputProps);
@@ -67,6 +71,7 @@
                             'name' => 'register-form-confirm-password',
                             'placeHolder' => "Confirm Password",
                             'type' => 'password',
+                            'required' => true,
                         ];
 
                         $inputField = BookinInput($inputProps);
@@ -81,6 +86,12 @@
                     Register
                 </button>
             </div>
-        </div>
+        </form>
     </div>
 </div>
+
+<?php
+
+require_once 'app/views/auth/authAlert/index.php'
+
+?>

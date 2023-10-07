@@ -12,7 +12,9 @@
             <li class="nav-link-history <?= $data['header']['currentRoute'] === "/history" ? "active" : "" ?>"><a href="/history">History</a></li>
             <li class="nav-link-login <?= $data['header']['currentRoute'] === "/login" ? "active" : "" ?>"><a href="/login">Login</a></li>
         </ul>
-        <button class="register-btn" onclick="register()">Register</button>
+        <form action="/register">
+            <button class="register-btn" type="submit">Register</button>
+        </form>
         <div class="profile-dropdown">
             <button class="dropbtn">
                 <img src="/public/icons/bookin-profile-ic.svg" alt="bookin profile icon">

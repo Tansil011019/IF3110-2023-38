@@ -30,16 +30,27 @@ class App {
         }
 
         require_once 'app/common/RequestException.php';
+        require_once 'app/views/libs/function/BookinAlert.php';
         try {
             call_user_func_array([$this->controller, $this->method], $this->param);
         } catch (RequestException $error) {
             if($error->getCode() == 401) {
                 header('HTTP/1.1 401 Unauthorized');
-                echo $error->getMessage();
+
+                header('Location: /login?errMessage=' . $error->getMessage() . '&errType=danger');
+                
                 exit;
             } else if ($error->getCode() == 404) {
                 header('HTTP/1.1 404 Not Found');
-                echo $error->getMessage();
+
+                header('Location: /login?errMessage=' . $error->getMessage() . '&errType=danger');
+                
+                exit;
+            } else if ($error->getCode() == 400) {
+                header('HTTP/1.1 400 Bad Request');
+
+                header('Location: /register?errMessage=' . $error->getMessage() . '&errType=danger');
+
                 exit;
             }
         }   
