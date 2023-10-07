@@ -221,33 +221,8 @@
     font-weight: 500;
 }
 
-.ticket-info-right-purchase-adjust {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    padding: 5px;
-}
-
-.button-operator button {
-    border: none;
-    background-color: var(--calliope);
-    color: var(--black);
+.input-amount {
     padding-top: 10px;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-bottom: 10px;
-    cursor: pointer;
-}
-
-.minus button {
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-}
-
-.plus button {
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
 }
 
 .input-amount input {
@@ -255,7 +230,11 @@
     text-align: center;
     background-color: var(--gainsboro);
     color: var(--black);
-    padding: 10px;
+    padding-top: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    border-radius: 20px;
 }
 
 .button-next {

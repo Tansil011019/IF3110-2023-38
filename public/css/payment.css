@@ -101,19 +101,6 @@
     padding-bottom: 80px;
 }
 
-.payment-info-token-container {
-    color: var(--ice);
-    font-size: 12px;
-    font-weight: 500;
-    align-self: flex-end;
-    margin-top: auto;
-    padding-bottom: 10px;
-}
-
-.payment-info-token-title {
-    padding-bottom: 10px;
-}
-
 .input-amount {
     color: var(--charchoal);
     font-size: 12px;

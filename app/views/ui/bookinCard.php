@@ -1,5 +1,5 @@
 <div class="card-outer-container">
-    <a href="#">
+    <a href="/ticket/?movieId=<?= $datum['film_id']; ?>">
         <div class="card-container">
                 <div class="card-image">
                     <img src="<?= $datum['poster_url']; ?>" alt="card image">
