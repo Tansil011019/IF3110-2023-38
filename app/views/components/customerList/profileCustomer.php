@@ -1,6 +1,7 @@
 <?php
 
-function profileCustomer($i,$name,$email) {
+function profileCustomer($i, $name, $email)
+{
     $html = <<< "EOT"
         <div class="profile-customer-container">
             <div class="left-side">
@@ -20,7 +21,9 @@ function profileCustomer($i,$name,$email) {
                 </div>
             </div>
             <div class="right-side">
-                <button id="kick-customer"></button>
+                <button id="kick-customer">
+                    <img src=public/images/bookin-customerlist-remove.svg>
+                </button>
             </div>
         </div>
     EOT;
