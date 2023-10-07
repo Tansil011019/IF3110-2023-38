@@ -8,6 +8,5 @@
         }
         ?>
         <script src="/public/js/password-input-eye-button.js"></script>
-        <script src="/public/js/dropdown-home-filter.js"></script>
     </body>
 </html>

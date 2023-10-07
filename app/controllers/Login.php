@@ -8,4 +8,12 @@ class Login extends Controller {
         $this->view('auth/login/index');
         $this->view('templates/footer');
     }
+
+    public function loginAjax() {
+        $this->ajax('LoginAjax');
+    }
+
+    public function checkLoginAjax() {
+        $this->ajax('CheckLoginAjax');
+    }
 }

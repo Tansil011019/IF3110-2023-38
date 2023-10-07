@@ -1,6 +1,6 @@
 <div class="login-page-container">
     <div class="login-page-background">
-        <div class="login-form">   
+        <form action="/login/loginAjax" method="post" class="login-form">
             <div class="login-form-upper">
                 <div class="login-title-label">
                     Welcome Back!
@@ -14,6 +14,7 @@
                             'name' => 'login-form-email-address',
                             'placeHolder' => "Email Address",
                             'type' => "email",
+                            'required' => true,
                         ];
                         $inputField = BookinInput($inputProps);
         
@@ -28,6 +29,7 @@
                             'name' => 'login-form-password',
                             'placeHolder' => "Password",
                             'type' => 'password',
+                            'required' => true,
                         ];
         
                         $inputField = BookinInput($inputProps);
@@ -42,6 +44,6 @@
                     Log In
                 </button>
             </div>
-        </div>
+        </form>
     </div>
 </div>
