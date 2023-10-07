@@ -17,8 +17,8 @@
             <button class="dropbtn">
                 <img src="/public/icons/bookin-profile-ic.svg" alt="bookin profile icon">
             </button>
-            <ul class = "profile__link">
-                <li class = "profile-link-profile">
+            <ul class="profile__link">
+                <li class="profile-link-profile">
                     <a href="/profile">
                         <div class="profile-menu-content content">
                             <img src="/public/icons/bookin-profile-ic-without-bg.svg" alt="bookin profile icon without background">

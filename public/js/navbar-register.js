@@ -1,12 +1,4 @@
-function register() {
-  localStorage.setItem("isLoggedIn", "true");
-
-  handleLoginState();
-}
-
-function handleLoginState() {
-  const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
-
+function handleLoginState(isLoggedIn) {
   const scheduleItem = document.querySelector(".nav-link-schedule");
   const historyItem = document.querySelector(".nav-link-history");
   const loginItem = document.querySelector(".nav-link-login");
@@ -28,14 +20,64 @@ function handleLoginState() {
   }
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  handleLoginState();
+function checkLoginStatus() {
+  var xhr = new XMLHttpRequest();
+
+  xhr.open("GET", "/login/checkLoginAjax", true);
+
+  xhr.onload = function () {
+    if (xhr.status === 200) {
+      try {
+        console.log(JSON.parse(xhr.responseText));
+        var data = JSON.parse(xhr.responseText);
+        const isLoggedIn = data.isLoggedIn;
+        console.log(isLoggedIn);
+        handleLoginState(isLoggedIn);
+      } catch (error) {
+        console.error("Error parsing JSON:", error);
+      }
+    } else {
+      console.error("Request failed with status:", xhr.status);
+    }
+  };
+
+  xhr.onerror = function () {
+    console.error("Error checking login status:", xhr.statusText);
+  };
+
+  xhr.send();
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  checkLoginStatus();
 });
 
 document
   .querySelector(".sign-out-link")
   .addEventListener("click", function (e) {
     e.preventDefault();
-    localStorage.setItem("isLoggedIn", "false");
-    handleLoginState();
+
+    var xhr = new XMLHttpRequest();
+
+    xhr.open("GET", "/logout/logoutAjax", true);
+
+    xhr.onload = function () {
+      if (xhr.status === 200) {
+        try {
+          console.log(xhr.responseText);
+          var data = JSON.parse(xhr.responseText);
+          checkLoginStatus();
+        } catch (error) {
+          console.error("Error parsing JSON:", error);
+        }
+      } else {
+        console.error("Request failed with status:", xhr.status);
+      }
+    };
+
+    xhr.onerror = function () {
+      console.error("Error logging out:", xhr.statusText);
+    };
+
+    xhr.send();
   });

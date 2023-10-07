@@ -4,11 +4,14 @@ class App {
     protected $controller = 'Home';
     protected $method = 'index';
     protected $param = [];
+    protected $allowedController = ['Home', 'login', 'register'];
     public function __construct() {
         $url = $this->parseUrl();
-        
+        session_start();
         if (isset($url[0]) && file_exists('app/controllers/'. $url[0] . '.php')) {
-            $this->controller = $url[0];
+            if(isset($_SESSION['userId']) || in_array($url[0], $this->allowedController)){
+                $this->controller = $url[0];
+            }
             unset($url[0]);
         }
 
@@ -25,7 +28,21 @@ class App {
         if (!empty($url)) {
             $this->param = [$url];
         }
-        call_user_func_array([$this->controller, $this->method], $this->param);
+
+        require_once 'app/common/RequestException.php';
+        try {
+            call_user_func_array([$this->controller, $this->method], $this->param);
+        } catch (RequestException $error) {
+            if($error->getCode() == 401) {
+                header('HTTP/1.1 401 Unauthorized');
+                echo $error->getMessage();
+                exit;
+            } else if ($error->getCode() == 404) {
+                header('HTTP/1.1 404 Not Found');
+                echo $error->getMessage();
+                exit;
+            }
+        }   
     }
 
     public function parseUrl() {

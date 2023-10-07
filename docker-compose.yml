@@ -11,6 +11,8 @@ services:
       - .env
     ports:
       - "8008:80"
+    depends_on:
+      - wiftiket-app-db
 
   wiftiket-app-db:
     container_name: wiftiket-app-db
