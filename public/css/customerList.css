@@ -40,10 +40,10 @@
 }
 
 .left-side {
-    display: flex;
-    gap: 30px;
-    margin-left: 20px;
-    align-items: center;
+  display: flex;
+  gap: 30px;
+  margin-left: 20px;
+  align-items: center;
 }
 
 .list-number {
@@ -96,12 +96,10 @@
 }
 
 .right-side {
-    display: flex;
-    /* margin-right: auto; */
-    position: absolute;
-    right: 0;
-    margin-right: 40px;
-    /* justify-self: right; */
+  display: flex;
+  position: absolute;
+  right: 0;
+  margin-right: 40px;
 }
 
 #kick-customer {
@@ -111,6 +109,8 @@
   flex-shrink: 0;
   border-radius: 5px;
   background: #ff5a5a;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 #kick-customer:hover {
