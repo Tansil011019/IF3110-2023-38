@@ -53,7 +53,6 @@ document.getElementById("add-movie").addEventListener("click", function () {
   var startDateStr = document.getElementById("start-date-input").value;
   var endDateStr = document.getElementById("end-date-input").value;
   var posterFileInput = document.getElementById("file-poster-input");
-  var thumbnailFileInput = document.getElementById("file-thumbnail-input");
 
   var startDate = new Date(startDateStr);
   var endDate = new Date(endDateStr);
@@ -62,9 +61,7 @@ document.getElementById("add-movie").addEventListener("click", function () {
     alert("Tanggal awal harus lebih kecil dari tanggal akhir.");
   } else if (!posterFileInput.files[0]) {
     alert("Input Poster wajib diisi.");
-  } else if (!thumbnailFileInput.files[0]) {
-    alert("Input Thumbnail wajib diisi.");
-  } else { // yang berhasil
+  }  else { // yang berhasil
     // Lakukan pengiriman data atau tindakan lain di sini jika semua valid.
   }
 });
