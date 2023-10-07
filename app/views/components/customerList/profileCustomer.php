@@ -30,7 +30,6 @@ function profileCustomer($i, $name, $email)
         </div>
         <div id="$modalId" class="modal-confirmation">
             <div class="modal-content">
-                <!-- <span class="close">&times;</span> -->
                 <div class="confirmation-label">Are you sure want to remove this customer?</div>
                 <div class="confirmation-button">
                     <button id="confirm-kick" data-customer-id="$i">Yes</button>

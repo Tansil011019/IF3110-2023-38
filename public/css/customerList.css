@@ -102,7 +102,7 @@
   margin-right: 40px;
 }
 
-#kick-customer {
+.kick-customer {
   justify-self: right;
   width: 45px;
   height: 45px;
@@ -113,12 +113,12 @@
   background-repeat: no-repeat;
 }
 
-#kick-customer:hover {
+.kick-customer:hover {
   background: #ff4444;
 }
 
-/* Gaya untuk latar belakang layar belakang modal */
 .modal-confirmation {
+  /* Untuk latar belakang*/
   display: none;
   position: fixed;
   top: 0;
@@ -129,23 +129,68 @@
   z-index: 1;
 }
 
-/* Gaya untuk konten modal */
 .modal-content {
-  background-color: #fefefe;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+  align-items: center;
+  width: 500px;
+  height: 300px;
+  border-radius: 15px;
+  background: #176b87;
   margin: 15% auto;
   padding: 20px;
-  border: 1px solid #888;
-  border-radius: 5px;
-  width: 80%;
-  max-width: 400px;
   position: relative;
 }
 
-/* Gaya untuk tombol close (X) pada modal */
-.close {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 10px;
-  cursor: pointer;
+.confirmation-label {
+  width: 305px;
+  color: #fff;
+  text-align: center;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.confirmation-button {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+
+#confirm-kick {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 50px;
+  border-radius: 10px;
+  background: #ff5a5a;
+  color: #fff;
+  text-align: center;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+#cancel-kick {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 50px;
+  border-radius: 10px;
+  background: #dafffb;
+  color: #176b87;
+  text-align: center;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
 }
