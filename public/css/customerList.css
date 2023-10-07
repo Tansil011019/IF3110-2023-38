@@ -116,3 +116,36 @@
 #kick-customer:hover {
   background: #ff4444;
 }
+
+/* Gaya untuk latar belakang layar belakang modal */
+.modal-confirmation {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+/* Gaya untuk konten modal */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 5px;
+  width: 80%;
+  max-width: 400px;
+  position: relative;
+}
+
+/* Gaya untuk tombol close (X) pada modal */
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  cursor: pointer;
+}
