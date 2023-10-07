@@ -6,6 +6,7 @@ function BookinInput($props) {
     $innerClassName = isset($props['innerStyles']) ? $props['innerStyles'] : '';
     $outerClassName = isset($props['outerStyles']) ? $props['outerStyles'] : '';
     $placeHolder = isset($props['placeHolder']) ? $props['placeHolder'] : '';
+    $required = isset($props['required']) ? 'required' : '';
 
     $typeInputStyleClass = 'text-input';
 
@@ -25,7 +26,7 @@ function BookinInput($props) {
     if ($type == 'password') {
         $inputField = "
             <div class=\"password-input-container\">
-                <input type=\"$type\" class=\"$combinedInnerClass\" name=\"$name\" placeholder=\"$placeHolder\">
+                <input type=\"$type\" class=\"$combinedInnerClass\" name=\"$name\" placeholder=\"$placeHolder\" $required>
                 <button type=\"button\" onclick=\"togglePasswordVisibility(this)\" class=\"password-toogle-button\">
                     <img src=\"/public/icons/bookin-eye-open-icon.svg\" alt=\"open-eye-icon\">
                 </button>

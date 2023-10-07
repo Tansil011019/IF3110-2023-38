@@ -298,7 +298,8 @@ COPY public.transaction (created_at, updated_at, deleted_at, transaction_id, sch
 --
 
 COPY public."user" (created_at, updated_at, deleted_at, user_id, name, password, created_by, updated_by, user_role, email) FROM stdin;
-2023-10-05 02:04:25.310758+00	2023-10-06 16:42:25.281928+00	\N	d21be2d3-e2d6-4ad4-89a4-15e2fe49d427	test_name	test_pwd	d21be2d3-e2d6-4ad4-89a4-15e2fe49d427	d21be2d3-e2d6-4ad4-89a4-15e2fe49d427	ADMIN	admin@gmail.com
+2023-10-07 06:29:52.755623+00	\N	\N	29167db5-2f17-4727-aa7d-1ddad5b44fc0	test_customer	$2y$10$Bxiffwtd76AV2wC/suRUk.geAsvjPFk0RPTWqQ0xe2CiMVM4X2J6G	d21be2d3-e2d6-4ad4-89a4-15e2fe49d427	\N	CUSTOMER	customer@gmail.com
+2023-10-05 02:04:25.310758+00	2023-10-07 06:31:01.518689+00	\N	d21be2d3-e2d6-4ad4-89a4-15e2fe49d427	test_name	$2y$10$iCF4Y00ZP0m91M.CThYcL.nfatGx4XX3/DulNRdSVB.J5vP.Tnbz2	d21be2d3-e2d6-4ad4-89a4-15e2fe49d427	d21be2d3-e2d6-4ad4-89a4-15e2fe49d427	ADMIN	admin@gmail.com
 \.
 
 

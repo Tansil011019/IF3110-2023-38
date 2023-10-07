@@ -13,7 +13,8 @@ class Controller
         return new $model;
     }
 
-    public function ajax($ajax) {
+    public function ajax($ajax)
+    {
         require_once 'app/ajax/' . $ajax . '.php';
     }
 }
