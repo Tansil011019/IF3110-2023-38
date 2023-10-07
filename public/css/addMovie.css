@@ -63,6 +63,28 @@
   border-radius: 10px;
 }
 
+.text-input-duration,
+.text-input-agelimit,
+.text-input-fee,
+.text-input-quota {
+  font-size: 1em;
+  font-weight: 600;
+  background: #d9d9d9;
+  border: none;
+  height: 3em;
+  padding-left: 16px;
+  color: #646983;
+  border-radius: 10px;
+  width: calc(100% - 10px);
+}
+
+.outer-input-class-duration,
+.outer-input-class-agelimit,
+.outer-input-class-fee,
+.outer-input-class-quota {
+  width: 10em;
+}
+
 .outer-input-class {
   width: 20em;
 }
@@ -73,10 +95,22 @@
   flex-direction: column;
 }
 
+.duration-and-agelimit-field {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.fee-and-quota-field {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
 .select-trailer-poster-button {
   display: flex;
   flex-direction: row;
-  gap: 15px;
+  gap: 20px;
 }
 
 .movie-trailer-button,
@@ -84,13 +118,14 @@
 .url-thumbnail {
   display: flex;
   flex-direction: column;
+  margin-bottom: -20px;
 }
 
 #select-trailer-button,
 #select-poster-button,
 #select-thumbnail-button {
   height: 4em;
-  width: 9em;
+  width: 10em;
   border-radius: 10px;
   background: #d9d9d9;
   display: flex;
@@ -149,6 +184,6 @@ input[type="date"] {
 }
 
 #add-movie:hover {
-    background-color: #1f5a83;
-    color: #dafffb;
+  background-color: #1f5a83;
+  color: #dafffb;
 }

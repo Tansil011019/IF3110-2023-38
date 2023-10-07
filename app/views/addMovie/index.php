@@ -74,36 +74,82 @@
             </div>
         </div>
         <div class="right-side">
-            <div class="duration-field">
-                <div class="addMovie-label">
-                    Duration
+            <div class="duration-and-agelimit-field">
+                <div class="duration-field">
+                    <div class="addMovie-label">
+                        Duration
+                    </div>
+                    <?php
+                    require_once 'app/views/libs/function/BookinInput.php';
+                    $inputProps = [
+                        'name' => 'movie-duration',
+                        'placeHolder' => "Input Duration",
+                        'type' => 'number',
+                        'innerStyles' => '-duration',
+                        'outerStyles' => '-duration'
+                    ];
+                    $inputField = BookinInput($inputProps);
+                    echo $inputField;
+                    ?>
                 </div>
-                <?php
-                require_once 'app/views/libs/function/BookinInput.php';
-                $inputProps = [
-                    'name' => 'movie-duration',
-                    'placeHolder' => "Input Duration",
-                    'type' => 'number',
-                ];
-                $inputField = BookinInput($inputProps);
-                echo $inputField;
-                ?>
-            </div>
-            <div class="agelimit-field">
-                <div class="addMovie-label">
-                    Age Limit
+                <div class="agelimit-field">
+                    <div class="addMovie-label">
+                        Age Limit
+                    </div>
+                    <?php
+                    require_once 'app/views/libs/function/BookinInput.php';
+                    $inputProps = [
+                        'name' => 'movie-agelimit',
+                        'placeHolder' => "Input Age Limit",
+                        'type' => 'number',
+                        'innerStyles' => '-agelimit',
+                        'outerStyles' => '-agelimit'
+                    ];
+                    $inputField = BookinInput($inputProps);
+                    echo $inputField;
+                    ?>
                 </div>
-                <?php
-                require_once 'app/views/libs/function/BookinInput.php';
-                $inputProps = [
-                    'name' => 'movie-agelimit',
-                    'placeHolder' => "Input Age Limit",
-                    'type' => 'number',
-                ];
-                $inputField = BookinInput($inputProps);
-                echo $inputField;
-                ?>
             </div>
+
+
+            <div class="fee-and-quota-field">
+                <div class="fee-field">
+                    <div class="addMovie-label">
+                        Fee
+                    </div>
+                    <?php
+                    require_once 'app/views/libs/function/BookinInput.php';
+                    $inputProps = [
+                        'name' => 'movie-fee',
+                        'placeHolder' => "Input Fee",
+                        'type' => 'number',
+                        'innerStyles' => '-fee',
+                        'outerStyles' => '-fee'
+                    ];
+                    $inputField = BookinInput($inputProps);
+                    echo $inputField;
+                    ?>
+                </div>
+                <div class="quota-field">
+                    <div class="addMovie-label">
+                        Quota
+                    </div>
+                    <?php
+                    require_once 'app/views/libs/function/BookinInput.php';
+                    $inputProps = [
+                        'name' => 'movie-quota',
+                        'placeHolder' => "Input quota",
+                        'type' => 'number',
+                        'innerStyles' => '-quota',
+                        'outerStyles' => '-quota'
+                    ];
+                    $inputField = BookinInput($inputProps);
+                    echo $inputField;
+                    ?>
+                </div>
+            </div>
+
+
             <div class="select-trailer-poster-button">
                 <div class="movie-trailer-button">
                     <div class="addMovie-label">
