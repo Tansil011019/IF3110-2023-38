@@ -15,7 +15,6 @@ class LoginModel
         $this->db = new Database;
     }
 
-
     public function getHeader()
     {
         return $this->modelInfo;

@@ -17,7 +17,8 @@ if (!$user) {
 if (password_verify($password, $user['password'])) {
     $_SESSION['userId'] = $user['user_id'];
     $_SESSION['isAdmin'] = $LoginModel->isAdmin($user);
-    header("Location: /");
+    header("Location: /"); 
+    exit ;
 } else {
     throw new RequestException('Unauthorized', 401);
 }
