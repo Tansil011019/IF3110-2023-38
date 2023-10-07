@@ -28,10 +28,8 @@ function checkLoginStatus() {
   xhr.onload = function () {
     if (xhr.status === 200) {
       try {
-        console.log(JSON.parse(xhr.responseText));
         var data = JSON.parse(xhr.responseText);
         const isLoggedIn = data.isLoggedIn;
-        console.log(isLoggedIn);
         handleLoginState(isLoggedIn);
       } catch (error) {
         console.error("Error parsing JSON:", error);
@@ -64,7 +62,6 @@ document
     xhr.onload = function () {
       if (xhr.status === 200) {
         try {
-          console.log(xhr.responseText);
           var data = JSON.parse(xhr.responseText);
           checkLoginStatus();
         } catch (error) {
