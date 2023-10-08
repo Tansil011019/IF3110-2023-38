@@ -7,15 +7,17 @@
             <?php
             require_once 'app/views/libs/function/BookinInput.php';
 
-            $inputProps = [
-                'name' => 'discover-movies-search-bar',
-                'placeHolder' => "Search Movie",
+            $inputPropsSearchBar = [
+                'name' => 'discover-movie-search-bar',
+                'placeHolder' => 'Search Movie',
+                'type' => 'search-bar',
             ];
-
-            $inputField = BookinInput($inputProps);
+            
+            $inputField = BookinInput($inputPropsSearchBar);
 
             echo $inputField;
             ?>
+            <img src="/public/icons/bookin-search-bar-magnifier-ic.svg" alt="bookin magnifier icon">
         </div>
     </div>
     <div class="discover-movie-body">
@@ -60,5 +62,5 @@
         </div>
     </div>
 
-    <script src="/public/js/dropdown-home-filter.js"></script>
+    <script src="/public/js/home-filter.js"></script>
     <script src="/public/js/pagination.js"></script>

@@ -15,7 +15,9 @@ function updateMoviePageData() {
       "&status=" +
       currentStatus +
       "&page=" +
-      currentPage,
+      currentPage +
+      "&search=" +
+      currentSearch,
     true
   );
   xhr.send();
