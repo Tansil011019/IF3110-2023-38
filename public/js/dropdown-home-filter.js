@@ -1,22 +1,51 @@
 var keywordGenre = document.querySelector(".genres-film");
 var keywordStatus = document.querySelector(".status-film");
-var containerCard = document.querySelector(".container-bookin-data");
+var containerCardAll = document.querySelector(".discover-movie-data-container");
 
-[keywordGenre, keywordStatus].forEach(function (keywordElmt) {
-  keywordElmt.addEventListener("change", function () {
-    var xhr = new XMLHttpRequest();
+var currentGenre = keywordGenre.value;
+var currentStatus = keywordStatus.value;
+var currentPage = 1;
+var itemsPerPage = 12;
 
-    xhr.onreadystatechange = function () {
-      if (xhr.readyState == 4 && xhr.status == 200) {
-        containerCard.innerHTML = xhr.responseText;
-      }
-    };
+console.log(containerCardAll)
 
-    xhr.open(
-      "GET",
-      "/movie?genre=" + keywordGenre.value + "&status=" + keywordStatus.value,
-      true
-    );
-    xhr.send();
-  });
+function updateMoviePage() {
+  var xhr = new XMLHttpRequest();
+
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      console.log(xhr.responseText)
+      containerCardAll.innerHTML = xhr.responseText;
+    }
+  };
+
+  xhr.open(
+    "GET",
+    "/movie?genre=" +
+      currentGenre +
+      "&status=" +
+      currentStatus +
+      "&page=" +
+      currentPage,
+    true
+  );
+  xhr.send();
+}
+
+keywordGenre.addEventListener("change", function () {
+  currentGenre = keywordGenre.value;
+  currentStatus = keywordStatus.value;
+
+  currentPage = 1;
+  updateMoviePage();
 });
+
+keywordStatus.addEventListener("change", function () {
+  currentGenre = keywordGenre.value;
+  currentStatus = keywordStatus.value;
+
+  currentPage = 1;
+  updateMoviePage();
+});
+
+updateMoviePage();
