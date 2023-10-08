@@ -22,8 +22,6 @@ function updateMoviePageData() {
 }
 
 function handlePreviousButton() {
-  console.log("previous");
-  console.log(currentPage);
   if (currentPage > 1) {
     currentPage = currentPage - 1;
     updateMoviePageData();
@@ -31,17 +29,14 @@ function handlePreviousButton() {
 }
 
 function handleNextButton(max) {
-  console.log("next");
   maxPage = max;
   if (currentPage < maxPage) {
     currentPage = currentPage + 1;
-    console.log(currentPage);
     updateMoviePageData();
   }
 }
 
 function handleNumberButton(index) {
-  console.log(index);
   currentPage = index;
   updateMoviePageData();
 }
