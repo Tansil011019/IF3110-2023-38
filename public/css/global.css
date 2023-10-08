@@ -292,3 +292,19 @@ footer {
   flex-direction: column;
   gap: 1rem;
 }
+
+.search-bar-container .search-bar {
+  border-radius: 20px;
+  font-family: "Inter", sans-serif;
+  border: 1px solid #d9d9d9;
+  padding: 1rem 1.5rem;
+  background: none;
+  color: #D9D9D9;
+  font-size: 0.75rem;
+}
+
+.search-bar-container .search-bar::placeholder {
+  color: #D9D9D9;
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+}

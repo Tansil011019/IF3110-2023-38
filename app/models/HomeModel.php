@@ -68,6 +68,10 @@ class HomeModel
             $conditions[] = 'genre = :genre';
         }
 
+        if (isset($query['search'])) {
+            $conditions[] = 'title LIKE :title';
+        }
+        
         $whereClause = empty($conditions) ? '' : 'WHERE ' . implode(' AND ', $conditions);
 
         $finalQuery = 'SELECT * FROM ' . $this->table . ' ' . $whereClause . ' ' . ' LIMIT ' . $pageSize . ' OFFSET ' . $offset;
@@ -77,6 +81,12 @@ class HomeModel
         if (isset($query['genre'])) {
             $this->db->bind(':genre', ucfirst($query['genre']), PDO::PARAM_STR);
         }
+
+        if (isset($query['search'])) {
+            $searchTerm = '%' . $query['search'] . '%';
+            $this->db->bind(':title', $searchTerm, PDO::PARAM_STR);
+        }
+
 
         return $this->db->resultSet();
     }
@@ -100,6 +110,10 @@ class HomeModel
             $conditions[] = 'genre = :genre';
         }
 
+        if (isset($query['search'])) {
+            $conditions[] = 'title LIKE :title';
+        }
+
         $whereClause = empty($conditions) ? '' : 'WHERE ' . implode(' AND ', $conditions);
 
         $finalQuery = 'SELECT COUNT(*) FROM ' . $this->table . ' ' . $whereClause;
@@ -108,6 +122,11 @@ class HomeModel
 
         if (isset($query['genre'])) {
             $this->db->bind(':genre', ucfirst($query['genre']), PDO::PARAM_STR);
+        }
+
+        if (isset($query['search'])) {
+            $searchTerm = '%' . $query['search'] . '%';
+            $this->db->bind(':title', $searchTerm, PDO::PARAM_STR);
         }
 
         return $this->db->single();
