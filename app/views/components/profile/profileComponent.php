@@ -34,7 +34,13 @@
     <form action="/profile" method="post" id="profileEditForm" enctype="multipart/form-data">
         <div class="profile-left-container">
             <div class="profile-image-display">
-                <img src="/public/images/profile-picture-default.svg" alt="Profile Image" id="profileImage" />
+                <?php
+                if ($user['image_url'] != null) {
+                    echo '<img src="' . $user['image_url'] . '" alt="Profile Image" id="profileImage" />';
+                } else {
+                    echo '<img src="/public/images/profile-picture-default.svg" alt="Profile Image" id="profileImage" />';
+                }
+                ?>
             </div>
             <div class="profile-image-button">
                 <button type="button" id="editImageButton" onclick="document.getElementById('fileInput').click()">Edit Profile Image</button>
