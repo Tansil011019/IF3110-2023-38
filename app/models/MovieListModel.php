@@ -21,9 +21,15 @@ class MovieListModel
         return $this->modelInfo;
     }
 
-    public function getAllMovies()
+    public function getMovieCount()
     {
-        $this->db->query('SELECT * FROM ' . $this->film);
+        $this->db->query('SELECT COUNT(*) FROM ' . $this->film);
+        return $this->db->resultSet();
+    }
+
+    public function getSortedMovies($sortAttribute, $sortOrder)
+    {
+        $this->db->query('SELECT * FROM ' . $this->film . ' ORDER BY ' . $sortAttribute . ' ' . $sortOrder);
         return $this->db->resultSet();
     }
 }
