@@ -1,6 +1,6 @@
-function updateProfileImage() {
+function editProfileImage() {
+    var profileImage = document.getElementById('profileImage');
     var fileInput = document.getElementById('fileInput');
-    var profileImage = document.getElementById('profile-image');
 
     if (fileInput.files && fileInput.files[0]) {
         var reader = new FileReader();
@@ -13,32 +13,27 @@ function updateProfileImage() {
     }
 }
 
-function toggleUsernameInput() {
-    var usernameLabel = document.getElementById('usernameLabel');
-    var usernameInput = document.getElementById('usernameInput');
-    var changeUsernameButton = document.getElementById('changeUsername');
+function toggleEditName() {
+    var currentContainer = document.getElementById('currentContainer');
+    var editContainer = document.getElementById('editContainer');
 
-    if (usernameLabel.style.display === 'none') {
-        // Jika input field sedang ditampilkan, ubah ke teks label
-        var newUsername = usernameInput.value.trim(); // Menghapus ekstra spasi
-        if (newUsername !== "") {
-            if (newUsername.length <= 25) {
-                usernameLabel.innerText = newUsername;
-                usernameLabel.style.display = 'inline';
-                usernameInput.style.display = 'none';
-                changeUsernameButton.innerText = '';
-            } else {
-                alert("Username is too long. Maximum length is 25 characters.");
-            }
-        } else {
-            alert("Username cannot be empty.");
-        }
+    if (currentContainer.style.display !== 'none') {
+        currentContainer.style.display = 'none';
+        editContainer.style.display = 'flex';
     } else {
-        // Jika label sedang ditampilkan, ubah ke input field
-        usernameInput.value = usernameLabel.innerText;
-        usernameLabel.style.display = 'none';
-        usernameInput.style.display = 'inline';
-        changeUsernameButton.innerText = '';
+        currentContainer.style.display = 'flex';
+        editContainer.style.display = 'none';
     }
 }
 
+function submitEditProfile() {
+    var newNameInput = document.getElementById('newNameInput').value;
+
+    if (newNameInput === '') {
+        alert('New name cannot be empty');
+    } else if (newNameInput.length > 100) {
+        alert('New name cannot be longer than 100 characters');
+    } else {
+        document.getElementById('profileEditForm').submit();
+    }
+}
