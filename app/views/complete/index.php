@@ -11,23 +11,51 @@
         <div class="line-complete-container">
             <img src="/public/icons/bookin-line-transparent.svg" alt="Transparent Line" />
         </div>
+
+        <?php
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $scheduleId = $_POST["scheduleId"];
+
+            $scheduleDate = $_POST["scheduleDate"];
+            $formattedDate = date("Y-m-d H:i:s", strtotime($scheduleDate . " 13:45"));
+
+            $totalPrice = $_POST["totalPrice"];
+            $formattedPrice = str_replace('.', '', $totalPrice);
+            $formattedPrice = str_replace(',', '.', $formattedPrice);
+
+        } else {
+            echo "Form not submitted.";
+        }
+        ?>
+
+        <?php
+        try{
+            $userId = $_SESSION['userId'];
+            $this->model('CompleteModel')->createTransaction($scheduleId, $formattedDate, $formattedPrice, $userId);
+            $transaction = $this->model('CompleteModel')->getTransactionID($scheduleId, $formattedDate, $formattedPrice, $userId);
+            $status = "Completed";
+        } catch (PDOException $error) {
+            $status = "Failed";
+        }
+        ?>
+
         <div class="complete-info-container">
             <div class="complete-info-title">Payment</div>
             <div class="complete-info-transaction-container">
                 <div class="complete-info-transaction-title">Transaction Number</div>
-                <div class="complete-info-transaction-value">87892374703297</div>
+                <div class="complete-info-transaction-value"><?php echo $transaction['transaction_id'] ?></div>
             </div>
             <div class="complete-info-order-container">
                 <div class="complete-info-order-title">Order Time</div>
-                <div class="complete-info-order-value">YYYY-MM-DD HH:MM:SS</div>
+                <div class="complete-info-order-value"><?php echo $formattedDate ?></div>
             </div>
             <div class="complete-info-total-container">
                 <div class="complete-info-total-title">Total Price</div>
-                <div class="complete-info-total-value">Rp195.000,00</div>
+                <div class="complete-info-total-value">Rp<?php echo $totalPrice ?></div>
             </div>
             <div class="complete-info-status-container">
                 <div class="complete-info-status-title">Status</div>
-                <div class="complete-info-status-value">Completed</div>
+                <div class="complete-info-status-value"><?php echo $status ?></div>
             </div>
             <div class="button-home">
                 <a href="/home">Back to Home</a>
