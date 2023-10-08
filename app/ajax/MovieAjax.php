@@ -4,6 +4,7 @@ require_once 'app/models/HomeModel.php';
 
 $genre = isset($_GET['genre']) ? $_GET['genre'] : '';
 $status = isset($_GET['status']) ? $_GET['status'] : '';
+$search = isset($_GET['search']) ? $_GET['search'] : '';
 
 $query = [];
 
@@ -15,11 +16,14 @@ if ($status !== '') {
     $query['status'] = $status;
 }
 
+if ($search !== '') {
+    $query['search'] = $search;
+}
+
 $HomeModel = new HomeModel();
 
 $movieCount = $HomeModel->getCountDataByFilter($query)['count'];
 $movies = $HomeModel->getMovieByQuery($query);
-var_dump($movieCount)
 ?>
 
 <div class="container-bookin-data">
