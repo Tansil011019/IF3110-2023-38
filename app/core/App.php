@@ -4,7 +4,7 @@ class App {
     protected $controller = 'Home';
     protected $method = 'index';
     protected $param = [];
-    protected $allowedController = ['Home', 'login', 'register'];
+    protected $allowedController = ['Home', 'login', 'register', 'movie'];
     public function __construct() {
         $url = $this->parseUrl();
         session_start();
