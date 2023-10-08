@@ -7,14 +7,11 @@ var currentStatus = keywordStatus.value;
 var currentPage = 1;
 var itemsPerPage = 12;
 
-console.log(containerCardAll)
-
 function updateMoviePage() {
   var xhr = new XMLHttpRequest();
 
   xhr.onreadystatechange = function () {
     if (xhr.readyState == 4 && xhr.status == 200) {
-      console.log(xhr.responseText)
       containerCardAll.innerHTML = xhr.responseText;
     }
   };
