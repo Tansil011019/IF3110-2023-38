@@ -4,7 +4,7 @@ class MovieList extends Controller {
     public function index() 
     {
         $data['header'] = $this->model('MovieListModel')->getHeader();
-        $data['movies'] = $this->model('MovieListModel')->getAllMovies();
+        $data['movieCount'] = $this->model('MovieListModel')->getMovieCount();
 
         $this->view('templates/header', $data);
         $this->view('movielist/index', $data);
