@@ -22,7 +22,7 @@ class LoginModel
 
     public function getUser($email)
     {
-        $this->db->query('SELECT * FROM "' . $this->table . '" WHERE email = ' . $email);
+        $this->db->query('SELECT * FROM "' . $this->table . '" WHERE email = ' . $email . ' AND deleted_at is NULL');
         return $this->db->single();
     }
 
