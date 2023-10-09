@@ -5,7 +5,7 @@
     $path = $parsedUrl['path'];
     if ($path == '/movie') {
         $href = '/ticket/?movieId=' . $datum['film_id'];
-    } else if ($path == '/movielist') {
+    } else if ($path == '/movieList') {
         $href = '/editmovie/?movieId=' . $datum['film_id'];
     }
     ?>

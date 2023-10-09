@@ -50,6 +50,11 @@ function endSelectDate() {
 }
 
 document.getElementById("add-movie").addEventListener("click", function () {
+  var textInputs = document.getElementsByClassName("text-input");
+  var textInputDuration = document.getElementsByClassName("text-input-duration");
+  var textInputAgeLimit = document.getElementsByClassName("text-input-agelimit");
+  var textInputFee = document.getElementsByClassName("text-input-fee");
+  var textInputQuota = document.getElementsByClassName("text-input-quota");
   var startDateStr = document.getElementById("start-date-input").value;
   var endDateStr = document.getElementById("end-date-input").value;
   var posterFileInput = document.getElementById("file-poster-input");
@@ -57,11 +62,32 @@ document.getElementById("add-movie").addEventListener("click", function () {
   var startDate = new Date(startDateStr);
   var endDate = new Date(endDateStr);
 
-  if (startDate > endDate) {
+  // check the four text inputs
+  if (!textInputs[0].value) {
+    alert("Input Judul wajib diisi.");
+  } else if (!textInputs[1].value) {
+    alert("Input Genre wajib diisi.");
+  } else if (!textInputs[2].value) {
+    alert("Input URL Trailer wajib diisi.");
+  } else if (!textInputs[3].value) {
+    alert("Input Deskripsi wajib diisi.");
+  } else if (!textInputDuration[0].value) {
+    alert("Input Durasi wajib diisi.");
+  } else if (!textInputAgeLimit[0].value) {
+    alert("Input Batas Usia wajib diisi.");
+  } else if (!textInputFee[0].value) {
+    alert("Input Harga wajib diisi.");
+  } else if (!textInputQuota[0].value) {
+    alert("Input Kuota wajib diisi.");
+  } else if (!startDateStr) {
+    alert("Input Tanggal Mulai wajib diisi.");
+  } else if (!endDateStr) {
+    alert("Input Tanggal Akhir wajib diisi.");
+  } else if (startDate > endDate) {
     alert("Tanggal awal harus lebih kecil dari tanggal akhir.");
   } else if (!posterFileInput.files[0]) {
     alert("Input Poster wajib diisi.");
-  }  else { // yang berhasil
-    // Lakukan pengiriman data atau tindakan lain di sini jika semua valid.
+  } else {
+    document.getElementById("add-movie-form").submit();
   }
 });
