@@ -25,6 +25,10 @@
   line-height: normal;
 }
 
+.add-movie-form {
+  display: flex;
+}
+
 .input-field-container {
   display: flex;
   gap: 30px;
