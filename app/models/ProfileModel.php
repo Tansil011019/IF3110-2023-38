@@ -27,7 +27,7 @@ class ProfileModel
     }
 
     public function updateProfileImage($image_url) {
-        $this->db->query('UPDATE "' . $this->table . '" SET image_url = \'' . $image_url . '\', updated_by = \'' . $_SESSION['userId'] . '\' WHERE user_id = \'' . $_SESSION['userId'] . '\'');
+        $this->db->query('UPDATE "' . $this->table . '" SET profile_picture_url = \'' . $image_url . '\', updated_by = \'' . $_SESSION['userId'] . '\' WHERE user_id = \'' . $_SESSION['userId'] . '\'');
         $this->db->execute();
     }
 
