@@ -19,8 +19,6 @@ class App
                     $this->controller = $url[0];
                 } else if (isset($_SESSION['isAdmin']) && !$_SESSION['isAdmin'] && (in_array($url[0], $this->allowedController) || in_array($url[0], $this->customerAllowedController) || in_array($url[0], $this->additionalAllowedControllerAfterLogin))) {
                     $this->controller = $url[0];
-                } else {
-                    $this->controller = $url[0];
                 }
             }
             unset($url[0]);
