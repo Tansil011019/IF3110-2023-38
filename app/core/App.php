@@ -1,27 +1,16 @@
 <?php
 
-class App
-{
+class App {
     protected $controller = 'Home';
     protected $method = 'index';
     protected $param = [];
-    protected $allowedController = ['Home', 'login', 'register', 'movie'];
-    protected $adminAllowedController = ['addMovie', 'customerList', 'movieList'];
-    protected $customerAllowedController = ['schedule', 'history'];
-    protected $additionalAllowedControllerAfterLogin = ['profile', 'logout'];
-    public function __construct()
-    {
+    protected $allowedController = ['Home', 'login', 'register'];
+    public function __construct() {
         $url = $this->parseUrl();
         session_start();
-        if (isset($url[0]) && file_exists('app/controllers/' . $url[0] . '.php')) {
-            if (isset($_SESSION['userId']) || in_array($url[0], $this->allowedController)) {
-                if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] && (in_array($url[0], $this->allowedController) || in_array($url[0], $this->adminAllowedController) || in_array($url[0], $this->additionalAllowedControllerAfterLogin))) {
-                    $this->controller = $url[0];
-                } else if (isset($_SESSION['isAdmin']) && !$_SESSION['isAdmin'] && (in_array($url[0], $this->allowedController) || in_array($url[0], $this->customerAllowedController) || in_array($url[0], $this->additionalAllowedControllerAfterLogin))) {
-                    $this->controller = $url[0];
-                } else {
-                    $this->controller = $url[0];
-                }
+        if (isset($url[0]) && file_exists('app/controllers/'. $url[0] . '.php')) {
+            if(isset($_SESSION['userId']) || in_array($url[0], $this->allowedController)){
+                $this->controller = $url[0];
             }
             unset($url[0]);
         }
@@ -45,17 +34,17 @@ class App
         try {
             call_user_func_array([$this->controller, $this->method], $this->param);
         } catch (RequestException $error) {
-            if ($error->getCode() == 401) {
+            if($error->getCode() == 401) {
                 header('HTTP/1.1 401 Unauthorized');
 
                 header('Location: /login?errMessage=' . $error->getMessage() . '&errType=danger');
-
+                
                 exit;
             } else if ($error->getCode() == 404) {
                 header('HTTP/1.1 404 Not Found');
 
                 header('Location: /login?errMessage=' . $error->getMessage() . '&errType=danger');
-
+                
                 exit;
             } else if ($error->getCode() == 400) {
                 header('HTTP/1.1 400 Bad Request');
@@ -64,12 +53,11 @@ class App
 
                 exit;
             }
-        }
+        }   
     }
 
-    public function parseUrl()
-    {
-        if (isset($_GET['url'])) {
+    public function parseUrl() {
+        if(isset($_GET['url'])){
             $url = rtrim($_GET['url'], '/');
             $url = filter_var($url, FILTER_SANITIZE_URL);
             $url = explode('/', $url);

@@ -1,32 +1,20 @@
-function handleLoginState(isLoggedIn, isAdmin) {
+function handleLoginState(isLoggedIn) {
   const scheduleItem = document.querySelector(".nav-link-schedule");
   const historyItem = document.querySelector(".nav-link-history");
   const loginItem = document.querySelector(".nav-link-login");
-  const addMovieItem = document.querySelector(".nav-link-add-movie");
-  const customerListItem = document.querySelector(".nav-link-customer-list");
-  const movieListItem = document.querySelector(".nav-link-movie-list");
   const registerButton = document.querySelector(".register-btn");
   const profileDropdown = document.querySelector(".profile-dropdown");
 
   if (isLoggedIn) {
-    if (isAdmin) {
-      addMovieItem.style.display = "block";
-      movieListItem.style.display = "block";
-      customerListItem.style.display = "block";
-    } else {
-      scheduleItem.style.display = "block";
-      historyItem.style.display = "block";
-    }
+    scheduleItem.style.display = "block";
+    historyItem.style.display = "block";
     profileDropdown.style.display = "block";
     loginItem.style.display = "none";
     registerButton.style.display = "none";
   } else {
-    customerListItem.style.display = "none";
-    addMovieItem.style.display = "none";
-    movieListItem.style.display = "none";
     scheduleItem.style.display = "none";
-    historyItem.style.display = "none";
     profileDropdown.style.display = "none";
+    historyItem.style.display = "none";
     loginItem.style.display = "block";
     registerButton.style.display = "block";
   }
@@ -42,8 +30,7 @@ function checkLoginStatus() {
       try {
         var data = JSON.parse(xhr.responseText);
         const isLoggedIn = data.isLoggedIn;
-        const isAdmin = data.isAdmin;
-        handleLoginState(isLoggedIn, isAdmin);
+        handleLoginState(isLoggedIn);
       } catch (error) {
         console.error("Error parsing JSON:", error);
       }
@@ -77,7 +64,6 @@ document
         try {
           var data = JSON.parse(xhr.responseText);
           checkLoginStatus();
-          window.location.reload();
         } catch (error) {
           console.error("Error parsing JSON:", error);
         }

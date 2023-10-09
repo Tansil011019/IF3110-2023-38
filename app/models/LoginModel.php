@@ -31,11 +31,6 @@ class LoginModel
         return isset($_SESSION['userId']);
     }
 
-    public function isRoleAdmin()
-    {
-        return isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'];
-    }
-
     public function isAdmin($user)
     {
         if ($this->isLoggedIn() && !strcmp($user['user_role'], USER_ROLE['ADMIN'])) {

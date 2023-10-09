@@ -4,7 +4,7 @@ require_once 'app/models/LoginModel.php';
 
 $LoginModel = new LoginModel();
 
-$response = ['isLoggedIn' => $LoginModel->isLoggedIn(), 'isAdmin' => $LoginModel->isRoleAdmin()];
+$response = ['isLoggedIn' => $LoginModel->isLoggedIn()];
 
 header('Content-Type: application/json');
 

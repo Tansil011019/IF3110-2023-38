@@ -68,10 +68,6 @@ class HomeModel
             $conditions[] = 'genre = :genre';
         }
 
-        if (isset($query['search'])) {
-            $conditions[] = 'title LIKE :title';
-        }
-        
         $whereClause = empty($conditions) ? '' : 'WHERE ' . implode(' AND ', $conditions);
 
         $finalQuery = 'SELECT * FROM ' . $this->table . ' ' . $whereClause . ' ' . ' LIMIT ' . $pageSize . ' OFFSET ' . $offset;
@@ -82,12 +78,6 @@ class HomeModel
             $this->db->bind(':genre', ucfirst($query['genre']), PDO::PARAM_STR);
         }
 
-        if (isset($query['search'])) {
-            $searchTerm = '%' . $query['search'] . '%';
-            $this->db->bind(':title', $searchTerm, PDO::PARAM_STR);
-        }
-
-
         return $this->db->resultSet();
     }
 
@@ -97,47 +87,12 @@ class HomeModel
         return $this->db->single();
     }
 
-    public function getCountDataByFilter($query) {
-        $status = isset($query['status']) ? $query['status'] : $this->defaultQuery['status'];
-
-        $conditions = [];
-
-        if (array_key_exists($status, $this->statusFilm)) {
-            $conditions[] = $this->statusFilm[$status];
-        }
-
-        if (isset($query['genre'])) {
-            $conditions[] = 'genre = :genre';
-        }
-
-        if (isset($query['search'])) {
-            $conditions[] = 'title LIKE :title';
-        }
-
-        $whereClause = empty($conditions) ? '' : 'WHERE ' . implode(' AND ', $conditions);
-
-        $finalQuery = 'SELECT COUNT(*) FROM ' . $this->table . ' ' . $whereClause;
-
-        $this->db->query($finalQuery);
-
-        if (isset($query['genre'])) {
-            $this->db->bind(':genre', ucfirst($query['genre']), PDO::PARAM_STR);
-        }
-
-        if (isset($query['search'])) {
-            $searchTerm = '%' . $query['search'] . '%';
-            $this->db->bind(':title', $searchTerm, PDO::PARAM_STR);
-        }
-
-        return $this->db->single();
-    }
-
     public function getRandomData($number = 5)
     {
         $totalRows = $this->getCountData()['count'];
         $limit = min($number, $totalRows);
 
-        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE end_date > current_timestamp AND trailer_url is NOT NULL ORDER BY RANDOM() LIMIT ' . $limit);
+        $this->db->query('SELECT * FROM ' . $this->table . ' WHERE end_date > current_timestamp ORDER BY RANDOM() LIMIT ' . $limit);
 
         return $this->db->resultSet();
     }

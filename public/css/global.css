@@ -87,9 +87,6 @@ header {
 
 .navbar .navbar-menu .nav__link .nav-link-schedule,
 .navbar .navbar-menu .nav__link .nav-link-history,
-.navbar .navbar-menu .nav__link .nav-link-add-movie,
-.navbar .navbar-menu .nav__link .nav-link-customer-list,
-.navbar .navbar-menu .nav__link .nav-link-movie-list,
 .navbar .navbar-menu .profile-dropdown {
   display: none;
 }
@@ -271,43 +268,4 @@ footer {
   z-index: -1;
   margin-top: 25px;
   margin-left: 0px;
-}
-
-.pagination-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.625rem;
-}
-
-.pagination-container .pagination-button {
-  padding: 0.1875rem 0.5rem;
-  border: none;
-  border-radius: 20%;
-  font-family: "Inter", sans-serif;
-  background: #DAFFFB;
-  color: #001C30;
-  font-size: 0.75rem;
-}
-
-.discover-movie-data-container {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.search-bar-container .search-bar {
-  border-radius: 20px;
-  font-family: "Inter", sans-serif;
-  border: 1px solid #d9d9d9;
-  padding: 1rem 1.5rem;
-  background: none;
-  color: #D9D9D9;
-  font-size: 0.75rem;
-}
-
-.search-bar-container .search-bar::placeholder {
-  color: #D9D9D9;
-  font-family: "Inter", sans-serif;
-  font-size: 0.75rem;
 }
