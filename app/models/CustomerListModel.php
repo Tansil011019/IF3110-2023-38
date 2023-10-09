@@ -25,24 +25,20 @@ class CustomerListModel
         return $this->modelInfo;
     }
 
-    public function getAllCustomer($query = []) {
-        $page = isset($query['page']) ? max(1, intval($query['page'])) : $this->defaultQuery['page'];
-        $pageSize = isset($query['pageSize']) ? intval($query['pageSize']) : $this->defaultQuery['pageSize'];
+    public function getAllCustomer() {
 
-        $offset = ($page - 1) * $pageSize;
-
-        $finalQuery = 'SELECT * FROM "' . $this->table . '" WHERE deleted_at IS NULL AND user_role=' . USER_ROLE['CUSTOMER'] . ' LIMIT ' . $pageSize . ' OFFSET ' . $offset;
+        $finalQuery = 'SELECT * FROM "' . $this->table . '" WHERE deleted_at IS NULL AND user_role=\'' . USER_ROLE['CUSTOMER'] . '\'';
 
         $this->db->query($finalQuery);
 
         return $this->db->resultSet();
     }
 
-    public function getAllCustomerCount() {
-        $finalQuery = 'SELECT COUNT(*) FROM "' . $this->table . '" WHERE deleted_at IS NULL AND user_role=' . USER_ROLE['CUSTOMER'];
+    public function deleteCustomer($email) {
+        $finalQuery = 'UPDATE "' . $this->table . '" SET deleted_at=current_timestamp WHERE email=\'' . $email . '\'';
 
         $this->db->query($finalQuery);
 
-        return $this->db->single();
+        $this->db->execute();
     }
 }

@@ -32,7 +32,7 @@ function profileCustomer($i, $name, $email)
             <div class="modal-content">
                 <div class="confirmation-label">Are you sure want to remove this customer?</div>
                 <div class="confirmation-button">
-                    <button id="confirm-kick" data-customer-id="$i">Yes</button>
+                    <button id="confirm-kick" data-customer-id="$i" onclick="onDeleteClick('$email')">Yes</button>
                     <button id="cancel-kick" data-customer-id="$i">No</button>
                     <script src="public/js/costomer-list.js"></script>
                 </div>
