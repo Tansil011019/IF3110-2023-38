@@ -35,8 +35,8 @@
         <div class="profile-left-container">
             <div class="profile-image-display">
                 <?php
-                if ($user['image_url'] != null) {
-                    echo '<img src="' . $user['image_url'] . '" alt="Profile Image" id="profileImage" />';
+                if ($user['profile_picture_url'] != null) {
+                    echo '<img src="' . $user['profile_picture_url'] . '" alt="Profile Image" id="profileImage" />';
                 } else {
                     echo '<img src="/public/images/profile-picture-default.svg" alt="Profile Image" id="profileImage" />';
                 }
