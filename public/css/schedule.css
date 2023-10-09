@@ -29,3 +29,9 @@
     border-bottom: 2px solid #555353;
     padding-bottom: 20px;
 }
+
+.schedule-container .schedule-data-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
