@@ -14,12 +14,14 @@ class App
         $url = $this->parseUrl();
         session_start();
         if (isset($url[0]) && file_exists('app/controllers/' . $url[0] . '.php')) {
-            if (isset($_SESSION['userId']) || in_array($url[0], $this->allowedController)) {
+            if (isset($_SESSION['userId'])) {
                 if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] && (in_array($url[0], $this->allowedController) || in_array($url[0], $this->adminAllowedController) || in_array($url[0], $this->additionalAllowedControllerAfterLogin))) {
                     $this->controller = $url[0];
                 } else if (isset($_SESSION['isAdmin']) && !$_SESSION['isAdmin'] && (in_array($url[0], $this->allowedController) || in_array($url[0], $this->customerAllowedController) || in_array($url[0], $this->additionalAllowedControllerAfterLogin))) {
                     $this->controller = $url[0];
                 }
+            } else if (in_array($url[0], $this->allowedController)){
+                $this->controller = $url[0];
             }
             unset($url[0]);
         }
