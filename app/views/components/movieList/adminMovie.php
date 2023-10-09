@@ -33,7 +33,7 @@
             Movie List
         </div>
         <div class="admin-movie-sorting-container">
-            <form action="/movielist" method="post" id="sortForm">
+            <form action="/movieList" method="post" id="sortForm">
                 <div class="sort-attribute-dropdown">
                     <select id="sortAttribute" name="sortAttribute">
                         <option value="" disabled selected hidden>Sort By: </option>
