@@ -7,11 +7,13 @@
     <div class="line-container"></div>
     <div class="list-profile-customer">
         <?php
-        for ($i = 1; $i <= 10; $i++) {
-            echo profileCustomer($i, "Nama User", "emailemailemail@gmail.com");
+        $i = 1;
+        foreach ($data['customer'] as $datum) {
+            echo profileCustomer($i, $datum['name'], $datum['email']);
+            $i++;
         }
         ?>
     </div>
 </div>
 
-<!-- <script src="/public/js/"></script> -->
+<script src="/public/js/profile-customer.js"></script>
