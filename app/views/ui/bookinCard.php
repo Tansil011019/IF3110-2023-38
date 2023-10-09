@@ -4,9 +4,9 @@
     $parsedUrl = parse_url($url);
     $path = $parsedUrl['path'];
     if ($path == '/movie') {
-        $href = '/ticket/?movie_id=' . $datum['film_id'];
+        $href = '/ticket/?movieId=' . $datum['film_id'];
     } else if ($path == '/movielist') {
-        $href = '/editmovie/?movie_id=' . $datum['film_id'];
+        $href = '/editmovie/?movieId=' . $datum['film_id'];
     }
     ?>
     <a href="<?php echo $href ?>">
