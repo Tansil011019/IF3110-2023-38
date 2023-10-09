@@ -8,7 +8,7 @@ class App
     protected $allowedController = ['Home', 'login', 'register', 'movie'];
     protected $adminAllowedController = ['addMovie', 'customerList', 'movieList'];
     protected $customerAllowedController = ['schedule', 'history'];
-    protected $additionalAllowedControllerAfterLogin = ['profile', 'logout'];
+    protected $additionalAllowedControllerAfterLogin = ['profile', 'logout','ticket', 'payment', 'complete'];
     public function __construct()
     {
         $url = $this->parseUrl();
