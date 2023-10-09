@@ -87,6 +87,8 @@ header {
 
 .navbar .navbar-menu .nav__link .nav-link-schedule,
 .navbar .navbar-menu .nav__link .nav-link-history,
+.navbar .navbar-menu .nav__link .nav-link-add-movie,
+.navbar .navbar-menu .nav__link .nav-link-movie-list,
 .navbar .navbar-menu .profile-dropdown {
   display: none;
 }
