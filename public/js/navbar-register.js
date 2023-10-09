@@ -3,6 +3,7 @@ function handleLoginState(isLoggedIn, isAdmin) {
   const historyItem = document.querySelector(".nav-link-history");
   const loginItem = document.querySelector(".nav-link-login");
   const addMovieItem = document.querySelector(".nav-link-add-movie");
+  const customerListItem = document.querySelector(".nav-link-customer-list");
   const movieListItem = document.querySelector(".nav-link-movie-list");
   const registerButton = document.querySelector(".register-btn");
   const profileDropdown = document.querySelector(".profile-dropdown");
@@ -11,6 +12,7 @@ function handleLoginState(isLoggedIn, isAdmin) {
     if (isAdmin) {
       addMovieItem.style.display = "block";
       movieListItem.style.display = "block";
+      customerListItem.style.display = "block";
     } else {
       scheduleItem.style.display = "block";
       historyItem.style.display = "block";
@@ -19,6 +21,7 @@ function handleLoginState(isLoggedIn, isAdmin) {
     loginItem.style.display = "none";
     registerButton.style.display = "none";
   } else {
+    customerListItem.style.display = "none";
     addMovieItem.style.display = "none";
     movieListItem.style.display = "none";
     scheduleItem.style.display = "none";
