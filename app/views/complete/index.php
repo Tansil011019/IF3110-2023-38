@@ -39,15 +39,6 @@
         }
         ?>
 
-        <script>
-            var status = "<?php echo $status; ?>";
-            if (status === "Completed") {
-                alert("Transaction successful!");
-            } else if (status === "Failed") {
-                alert("Transaction failed!");
-            }
-        </script>
-
         <div class="complete-info-container">
             <div class="complete-info-title">Payment</div>
             <div class="complete-info-transaction-container">
