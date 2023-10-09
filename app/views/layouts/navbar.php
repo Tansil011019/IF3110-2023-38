@@ -11,6 +11,8 @@
             <li class="nav-link-schedule <?= $data['header']['currentRoute'] === "/schedule" ? "active" : "" ?>"><a href="/schedule">Schedule</a></li>
             <li class="nav-link-history <?= $data['header']['currentRoute'] === "/history" ? "active" : "" ?>"><a href="/history">History</a></li>
             <li class="nav-link-login <?= $data['header']['currentRoute'] === "/login" ? "active" : "" ?>"><a href="/login">Login</a></li>
+            <li class="nav-link-add-movie <?= $data['header']['currentRoute'] === "/addMovie" ? "active" : "" ?>"><a href="/addMovie">Add Movie</a></li>
+            <li class="nav-link-movie-list <?= $data['header']['currentRoute'] === "/movieList" ? "active" : "" ?>"><a href="/movieList">Movie List</a></li>
         </ul>
         <form action="/register">
             <button class="register-btn" type="submit">Register</button>
